@@ -1,0 +1,50 @@
+.product-details {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+  }
+
+  .descript {
+    color: #666;
+    font-size: 13px;
+    text-align: left;
+  }
+
+  .product-specs {
+    font-size: 12.5px;
+    margin-bottom: 5px;
+  }
+
+  .product-specs p {
+    background: #f2f4f7;
+    border: 0;
+    color: #667085;
+  }
+
+  /* Quà tặng (nếu có) */
+.gift {
+    font-size: 13px;
+    color: black;
+    margin-bottom: 8px;
+    text-align: left;
+  }
+  
+  /* Đánh giá sản phẩm */
+  .product-rating {
+    display: flex;
+    align-items: center;
+    font-size: 11.5px;
+    margin-bottom: 10px;
+    line-height: 13px
+  }
+  
+  .star-icon {
+    color: #FFCC33;
+  }
+
+  .sold {
+    margin-left: 5px;
+    color: #777;
+  }
+  
+  

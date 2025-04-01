@@ -4,13 +4,27 @@ import flashsale from "../image/flashsale.png";
 import onlineonly from "../image/onlineonly.png";
 import vodoi from "../image/vodoi.jpg";
 import { products } from "./ProductSale.js";
+import { productOnlineOnly } from "./productOnlineOnly.js";
 import FlashSaleProductCard from "./FlashSaleProductCard";
 import DefaultProductCard from "./DefaultProductCard";
+import { FaAngleDown } from "react-icons/fa";
 function HotPromotion() {
   const [activeTab, setActiveTab] = useState("flashsale");
   const [startIndex, setStartIndex] = useState(0);
+  const [showMore, setShowMore] = useState(false);
   const itemsPerPage = 12;
   const totalProducts = products.length;
+
+  const productsByTab = {
+    flashsale: products,
+    onlineonly: productOnlineOnly,
+    vodoi: productOnlineOnly,
+    dienthoai: productOnlineOnly,
+    apple: productOnlineOnly,
+    laptop: productOnlineOnly,
+    phukien: productOnlineOnly,
+    dongho: productOnlineOnly,
+  };
 
   const handleTabClick = (event, tabName) => {
     event.preventDefault();
@@ -31,8 +45,17 @@ function HotPromotion() {
     }
   }
 
+  const toggleShowMore = () => {
+    setShowMore(!showMore);
+  };
+
   const isNextDisabled = startIndex + itemsPerPage >= totalProducts;
   const isPrevDisabled = startIndex <= 0;
+
+  const productList = productsByTab[activeTab].slice(
+    0,
+    startIndex + (showMore ? productsByTab[activeTab].length : itemsPerPage)
+  );
 
   // Sử dụng component tương ứng cho từng tab
   const getProductCard = () => {
@@ -88,27 +111,41 @@ function HotPromotion() {
           </li>
         </ul>
         <div className="product-carousel">
-          <button
-            className={`arrow left ${isPrevDisabled ? "disabled" : ""}`}
-            onClick={prevSlide}
-          >
-            ❮
-          </button>
+          {activeTab === "flashsale" && (
+            <>
+              <button
+                className={`arrow left ${isPrevDisabled ? "disabled" : ""}`}
+                onClick={prevSlide}
+              >
+                ❮
+              </button>
+            </>
+          )}
 
           <div className="product-list">
-            {products
+            {productsByTab[activeTab]
               .slice(startIndex, startIndex + itemsPerPage)
               .map((product) => {
-                const ProductCard = getProductCard(); // Lấy component tương ứng
+                const ProductCard = getProductCard(); // Lấy component tương ứng cho từng tab
                 return <ProductCard key={product.id} product={product} />;
               })}
           </div>
 
-          <button
-            className={`arrow right ${isNextDisabled ? "disabled" : ""}`}
-            onClick={nextSlide}
-          >
-            ❯
+          {activeTab === "flashsale" && (
+            <>
+              <button
+                className={`arrow right ${isNextDisabled ? "disabled" : ""}`}
+                onClick={nextSlide}
+              >
+                ❯
+              </button>
+            </>
+          )}
+        </div>
+        <div className="show-more-container">
+          <button className="show-more-btn" onClick={toggleShowMore}>
+            {showMore ? "Thu gọn sản phẩm" : "Xem thêm sản phẩm"}
+            <FaAngleDown className="arrow-down" />
           </button>
         </div>
       </div>

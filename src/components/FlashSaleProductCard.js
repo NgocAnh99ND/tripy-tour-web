@@ -16,7 +16,10 @@ const FlashSaleProductCard = ({ product }) => {
         <sup>₫</sup>
       </p>
       <div className="old-price">
-        <p className="product-old-price">{product.oldPrice}</p>
+        <p className="product-old-price">
+          {product.oldPrice.replace("₫", "")}
+          <sup>₫</sup>
+        </p>
         <span className="discount">{product.discount}</span>
       </div>
       <div className="fs-contain">
