@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-top: 110px;
+  }
+  .header-section {
+    width: 100%;
+    text-align: left;
+    padding-left: 40px;
+  }
+
+  .header-section h3 {
+    font-weight: 700;
+    font-size: 25px;
+    color: #1a202c;
+    line-height: 32px;
+    margin-bottom: 10px;
+    padding-top: 40px;
+  }
+  
