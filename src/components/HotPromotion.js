@@ -8,12 +8,12 @@ import { productOnlineOnly } from "./productOnlineOnly.js";
 import FlashSaleProductCard from "./FlashSaleProductCard";
 import DefaultProductCard from "./DefaultProductCard";
 import { FaAngleDown } from "react-icons/fa";
+
 function HotPromotion() {
   const [activeTab, setActiveTab] = useState("flashsale");
   const [startIndex, setStartIndex] = useState(0);
   const [showMore, setShowMore] = useState(false);
   const itemsPerPage = 12;
-  const totalProducts = products.length;
 
   const productsByTab = {
     flashsale: products,
@@ -30,11 +30,15 @@ function HotPromotion() {
     event.preventDefault();
     setActiveTab(tabName);
     setStartIndex(0); // Reset lại startIndex khi đổi tab
+    setShowMore(false); // Thu gọn lại khi chuyển tab
   };
 
+  const totalProducts = productsByTab[activeTab].length;
+
+  // Chức năng chuyển đổi giữa các slide sản phẩm
   function nextSlide() {
-    const totalProducts = products.length;
-    if (startIndex + itemsPerPage < totalProducts) {
+    const total = productsByTab[activeTab].length;
+    if (startIndex + itemsPerPage < total) {
       setStartIndex(startIndex + itemsPerPage);
     }
   }
@@ -49,15 +53,10 @@ function HotPromotion() {
     setShowMore(!showMore);
   };
 
-  const isNextDisabled = startIndex + itemsPerPage >= totalProducts;
-  const isPrevDisabled = startIndex <= 0;
+  const productList = showMore
+    ? productsByTab[activeTab]
+    : productsByTab[activeTab].slice(0, startIndex + itemsPerPage);
 
-  const productList = productsByTab[activeTab].slice(
-    0,
-    startIndex + (showMore ? productsByTab[activeTab].length : itemsPerPage)
-  );
-
-  // Sử dụng component tương ứng cho từng tab
   const getProductCard = () => {
     if (activeTab === "flashsale") {
       return FlashSaleProductCard;
@@ -114,7 +113,7 @@ function HotPromotion() {
           {activeTab === "flashsale" && (
             <>
               <button
-                className={`arrow left ${isPrevDisabled ? "disabled" : ""}`}
+                className={`arrow left ${startIndex <= 0 ? "disabled" : ""}`}
                 onClick={prevSlide}
               >
                 ❮
@@ -122,19 +121,24 @@ function HotPromotion() {
             </>
           )}
 
-          <div className="product-list">
-            {productsByTab[activeTab]
-              .slice(startIndex, startIndex + itemsPerPage)
-              .map((product) => {
-                const ProductCard = getProductCard(); // Lấy component tương ứng cho từng tab
-                return <ProductCard key={product.id} product={product} />;
-              })}
+          <div
+            className="product-list"
+            style={{
+              transform: `translateX(-${startIndex * (100 / itemsPerPage)}%)`, // Điều chỉnh chuyển động ngang
+            }}
+          >
+            {productList.map((product) => {
+              const ProductCard = getProductCard();
+              return <ProductCard key={product.id} product={product} />;
+            })}
           </div>
 
           {activeTab === "flashsale" && (
             <>
               <button
-                className={`arrow right ${isNextDisabled ? "disabled" : ""}`}
+                className={`arrow right ${
+                  startIndex + itemsPerPage >= totalProducts ? "disabled" : ""
+                }`}
                 onClick={nextSlide}
               >
                 ❯
@@ -145,7 +149,7 @@ function HotPromotion() {
         <div className="show-more-container">
           <button className="show-more-btn" onClick={toggleShowMore}>
             {showMore ? "Thu gọn sản phẩm" : "Xem thêm sản phẩm"}
-            <FaAngleDown className="arrow-down" />
+            <FaAngleDown className="show-more-arrow-down" />
           </button>
         </div>
       </div>

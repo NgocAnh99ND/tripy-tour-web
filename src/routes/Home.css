@@ -8,7 +8,7 @@
   .header-section {
     width: 100%;
     text-align: left;
-    padding-left: 40px;
+    padding-left: 17px;
   }
 
   .header-section h3 {
@@ -18,5 +18,17 @@
     line-height: 32px;
     margin-bottom: 10px;
     padding-top: 40px;
+  }
+
+  .banner-homepage img { 
+    border-radius: 8px;
+    text-align: center;
+    margin: 0 auto;
+    width: 1200px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 10px;
   }
   

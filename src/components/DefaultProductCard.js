@@ -12,12 +12,12 @@ const DefaultProductCard = ({ product }) => {
       <div className="product-details">
         <h3 className="product-name">{product.name}</h3>
         <div className="product-specs">
-          <p>{product.processor}</p>
-          <p>{product.hz}</p>
-          <p>{product.responetime}</p>
-          <p>{product.CPU}</p>
-          <p>{product.ram}</p>
-          <p>{product.ssd}</p>
+          {product.processor && <p>{product.processor}</p>}
+          {product.hz && <p>{product.hz}</p>}
+          {product.responetime && <p>{product.responetime}</p>}
+          {product.CPU && <p>{product.CPU}</p>}
+          {product.ram && <p>{product.ram}</p>}
+          {product.ssd && <p>{product.ssd}</p>}
         </div>
         <p className="descript">Chỉ bán online</p>
         <p className="product-price">

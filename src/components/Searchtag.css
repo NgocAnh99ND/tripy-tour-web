@@ -1,0 +1,35 @@
+.search-tags-container {
+    background-color: #f9fafb;
+    border-radius: 16px;
+    padding: 24px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .search-tags-container h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: #1a1a1a;
+  }
+  
+  .tags-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  
+  .tag {
+    background-color: #f1f5f9;
+    color: #1a1a1a;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: background-color 0.2s;
+  }
+  
+  .tag:hover {
+    background-color: #e2e8f0;
+  }
+  

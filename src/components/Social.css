@@ -1,0 +1,67 @@
+.social-container {
+    margin: 10px 25px 10px 25px;
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 20px;
+  }
+  
+  .social-container h3 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    color: #1d2939;
+    text-align: left;
+  }
+  
+  .social-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .social-item {
+    width: 23%;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+  
+  .social-item a img {
+    width: 280px;
+    height: 162px;
+    display: block;
+    border-radius: 8px;
+  }
+  
+  .social-item p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: rgba(16, 24, 40, 1);
+    line-height: 20px;
+    padding-top: 10px;
+    font-size: 14px;
+  }
+  
+  .btn-more {
+    display: inline-block;
+    margin-top: 24px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #007aff;
+    text-decoration: none;
+    transition: color 0.2s;
+    text-align: center;
+  }
+  
+  .btn-more:hover {
+    color: #0051cc;
+    text-decoration: underline;
+  }
+  

@@ -8,8 +8,7 @@
   
   .products-tabs {
     background-color: white;
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
+    border-radius: 16px;
   }
   
   .products-tab {
@@ -84,7 +83,7 @@
   }
 
   .product-card:hover {
-    transform: translateY(-7px); 
+    transform: translateY(-3px); 
   }
 
   .product-card h3:hover {
@@ -284,7 +283,7 @@
     transition: background-color 0.3s;
   }
 
-  .arrow-down {
+  .show-more-arrow-down{
     margin-left: 1px;
     font-size: 14px;
   }

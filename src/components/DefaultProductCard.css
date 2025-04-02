@@ -11,14 +11,22 @@
   }
 
   .product-specs {
-    font-size: 12.5px;
-    margin-bottom: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 7px;
   }
-
+  
   .product-specs p {
-    background: #f2f4f7;
-    border: 0;
+    background-color: #f2f4f7; 
     color: #667085;
+    border-radius: 2px; 
+    font-weight: 500;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 12px;
+    margin-right: 5px;
+    padding: 4px 5px;
+    white-space: nowrap;
   }
 
   /* Quà tặng (nếu có) */
