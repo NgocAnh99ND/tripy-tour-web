@@ -1,15 +1,19 @@
 .footer-container {
-    background-color: #f1f5f9;
-    padding: 40px 20px;
-    font-family: Arial, sans-serif;
+    background-color: #fff;
+    padding: 20px;
     color: #333;
-    text-align: left;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
   }
   
   .footer-container h4 {
-    font-size: 1.2em;
+    font-size: 13px;
     font-weight: bold;
-    color: #1a1a1a;
+    color: #1d2939;
+    text-align: left;
   }
   
   .footer-container ul {
@@ -19,50 +23,119 @@
   
   .footer-container li {
     margin: 8px 0;
+    font-size: 14px;
+    text-align: left;
   }
   
-  .footer-container a {
+  .support a {
     text-decoration: none;
     color: #007aff;
     transition: color 0.2s;
+    font-weight: 700;
+  }
+
+  .company a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    font-weight: 400;
   }
   
+  .info a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .toggle-btn {
+    background-color: #fff;
+    border: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .toggle-btn:hover {
+    color: #0051cc;
+  }
+
+  .less-icon, .more-icon {
+    margin-left: 5px;
+    font-size: 14px;
+  }
+
   .footer-container a:hover {
     color: #0051cc;
   }
   
   .support, .company, .info, .websites {
-    margin-bottom: 30px;
+    width: 288px;
+  }
+
+  .websites h4 {
+    color: #222;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
   }
   
-  .websites .website-links a {
-    display: inline-block;
-    margin-right: 15px;
-    color: #333;
-    text-decoration: none;
-    font-size: 0.95em;
+  .website-links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 600px;
+    margin-top: 10px;
   }
   
+  .website-links a {
+    display: block;
+    border-radius: 12px;
+    padding: 6px;
+  }
+  
+  .website-links img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: contain;
+  }
+  
+  .social {
+    margin-left: auto;
+    text-align: right;
+}
+
   .social-media {
-    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .social-media img {
+    pointer-events: auto !important;
+    height: 18px;
+    width: 18px;
+    margin-right: 8px;
   }
   
   .social-media a {
-    display: inline-block;
-    margin-right: 15px;
-    color: #333;
     text-decoration: none;
-    font-size: 0.95em;
+    color: #007aff;
+    font-weight: normal;
+    font-size: 14px;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
   }
   
-  .footer-bottom {
-    text-align: center;
-    font-size: 0.85em;
-    color: #999;
-    margin-top: 40px;
+  .social-media a:hover {
+    color: #0051cc;
   }
   
-  .footer-bottom p {
-    margin: 5px 0;
+  .protected-group img {
+    width: 355px;
+    height: 87.5px;
   }
+  
   
