@@ -11,8 +11,8 @@ const ExclusiveProduct = () => {
   const [startIndex, setStartIndex] = useState(0);
 
   function nextSlide() {
-    const total = exclusiveProductList.length;
-    if (startIndex + itemsPerPage < total) {
+    const totalItems = exclusiveProductList.length;
+    if (startIndex + itemsPerPage < totalItems) {
       setStartIndex(startIndex + itemsPerPage);
     }
   }
@@ -32,37 +32,39 @@ const ExclusiveProduct = () => {
             <img src={bannerExclusiveproduct} alt="Sản Phẩm Đặc Quyền." />
           </a>
         </div>
-        <div className="product-carousel">
+        <div className="product-carousel-exclusive">
           <button
-            className={`arrow left ${startIndex <= 0 ? "disabled" : ""}`}
+            className={`arrow left-exclusive ${
+              startIndex <= 0 ? "disabled" : ""
+            }`}
             onClick={prevSlide}
+            disabled={startIndex <= 0}
           >
             ❮
           </button>
-          <div
-            className="product-list"
-            style={{
-              transform: `translateX(-${startIndex * (100 / itemsPerPage)}%)`,
-              transition: "transform 0.5s ease-in-out",
-            }}
-          >
-            {exclusiveProductList.map((product, index) => (
-              <div
-                key={product.id}
-                className="product-item"
-                style={{ width: `${100 / itemsPerPage}%` }}
-              >
-                <DefaultProductCard product={product} />
-              </div>
-            ))}
+          <div className="product-list-wrapper-exclusive">
+            <div
+              className="product-list-exclusive"
+              style={{
+                transform: `translateX(-${(startIndex / itemsPerPage) * 100}%)`,
+                transition: "transform 0.5s ease-in-out",
+              }}
+            >
+              {exclusiveProductList.map((product) => (
+                <div key={product.id} className="product-item-exclusive">
+                  <DefaultProductCard product={product} />
+                </div>
+              ))}
+            </div>
           </div>
           <button
-            className={`arrow right ${
+            className={`arrow right-exclusive ${
               startIndex + itemsPerPage >= exclusiveProductList.length
                 ? "disabled"
                 : ""
             }`}
             onClick={nextSlide}
+            disabled={startIndex + itemsPerPage >= exclusiveProductList.length}
           >
             ❯
           </button>

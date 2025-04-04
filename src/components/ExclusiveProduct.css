@@ -1,10 +1,10 @@
-.exclusiveProduct-container{ 
-  text-align: left;
+.exclusiveProduct-container { 
   margin: 10px 25px 10px 25px;
   background-color: #fff;
   border-radius: 16px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  display: flex;
+  text-align: left;
+  width: 1215px;
 }
 
 .exclusiveProduct-title {
@@ -13,77 +13,76 @@
   color: #1a202c;
   line-height: 32px;
   padding: 20px 0 0 20px;
+  
 }
 
 .exclusiveProduct-content {
   display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 20px;
-  background: #fff;
-  width: 100%;
-  min-height: 100vh;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin: 15px 0 15px 0;
+  justify-content: space-evenly;
 }
 
-.exclusiveProduct-banner a{
-  width: 380px;
-  margin-right: 10px;
-  display: block;
+.exclusiveProduct-banner{  
+  width: 31.3%;
+  flex-shrink: 0;
 }
 
 .exclusiveProduct-banner img{
-  display: block;
-  height: auto;
-  flex: 1;
-  max-width: 33.33%;
-  position: relative;
+  width: 100%;
 }
 
-/* .product-carousel {
+.product-carousel-exclusive {
   display: flex;
   align-items: center;
   position: relative;
+  width: 64.7%;
+  overflow: hidden;
+}
+
+.product-list-wrapper-exclusive {
   overflow: hidden;
   width: 100%;
 }
 
-.product-list {
+.product-list-exclusive {
   display: flex;
   transition: transform 0.5s ease-in-out;
+  width: 100%;
 }
 
-.product-item {
+.product-item-exclusive {
   flex: 0 0 calc(100% / 4);
-  padding: 10px;
   box-sizing: border-box;
+  padding: 5px;
 }
 
 .arrow {
+  background-color: rgba(255, 255, 255, 0.7); 
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 20px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.1);
-  border: none;
-  font-size: 24px;
-  padding: 10px;
-  cursor: pointer;
-  transition: background 0.3s;
-  border-radius: 50%;
+  z-index: 10;
 }
 
-.arrow:hover {
-  background: rgba(0, 0, 0, 0.3);
+.arrow.left-exclusive {
+  left: 1px;
 }
 
-.arrow.left {
-  left: 10px;
-}
-
-.arrow.right {
-  right: 10px;
+.arrow.right-exclusive {
+  right: 1px;
 }
 
 .arrow.disabled {
   opacity: 0.5;
-  pointer-events: none;
-} */
+  cursor: not-allowed;
+}
+
+
+

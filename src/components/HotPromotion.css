@@ -61,6 +61,7 @@
     justify-content: center;
     overflow: hidden;
     padding: 15px 20px;
+    flex-direction: column;
   }
   
   .product-list {
@@ -70,7 +71,6 @@
     gap: 10px;
     transition: transform 0.5s ease-in-out;
   }
-  
   
   .product-card {
     background: #fff;
@@ -269,7 +269,6 @@
     align-items: center;
     border: none;
     background-color: white;
-    border-radius: 5px;
     height: 36px;
     padding: 0 20px;
     line-height: 36px;
@@ -287,5 +286,7 @@
     margin-left: 1px;
     font-size: 14px;
   }
+
+  
   
   

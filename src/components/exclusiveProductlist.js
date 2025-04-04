@@ -1,9 +1,10 @@
 import AkkoHamsterPlus from "../image/AkkoHamsterPlus.jpg";
-import FESTINA41 from "../image/FESTINA41.jpg";
+import oppoA38 from "../image/oppo-a38.jpg";
 import SonyWH1000XM5 from "../image/SonyWH1000XM5.jpg";
 import ORIENTStar from "../image/ORIENTStar.jpg";
-import CERTINAUrban from "../image/CERTINAUrban.jpg";
+import iPadAir6M2 from "../image/iPadAir6M2.jpg";
 import Akko3087 from "../image/Akko3087.jpg";
+import hpLaptop from "../image/hp-laptop.jpg";
 
 export const exclusiveProductList = [
   {
@@ -18,10 +19,12 @@ export const exclusiveProductList = [
   },
   {
     id: 8,
-    name: "FESTINA 41 mm Nam F20358/4",
-    price: "2.920.000₫",
-    rating: "4.3",
-    img: FESTINA41,
+    name: "OPPO A38 6GB/128GB",
+    price: "3.990.000₫",
+    oldPrice: "4.490.000₫",
+    discount: "-11%",
+    rating: "5",
+    img: oppoA38,
   },
   {
     id: 9,
@@ -39,14 +42,17 @@ export const exclusiveProductList = [
     price: "13.864.000₫",
     oldPrice: "17.330.000₫",
     discount: "-20%",
+    rating: "5",
     img: ORIENTStar,
   },
   {
     id: 11,
-    name: "CERTINA Urban 39 mm Nam C035.410.22.037.02",
-    price: "12.150.000₫",
+    name: "HP 240 G8 i3 1115G4 (6L1A2PA)",
+    price: "10.190.000₫",
+    oldPrice: "12.790.000₫",
+    discount: "-20%",
     sold: "• Đã bán 1",
-    img: CERTINAUrban,
+    img: hpLaptop,
   },
   {
     id: 12,
@@ -59,10 +65,12 @@ export const exclusiveProductList = [
   },
   {
     id: 13,
-    name: "CERTINA Urban 39 mm Nam C035.410.22.037.02",
-    price: "12.150.000₫",
+    name: "iPad Air 6 M2 11 inch 5G 1TB",
+    price: "29.990.000₫",
+    oldPrice: "34.490.000₫",
+    discount: "-13%",
     sold: "• Đã bán 1",
-    img: CERTINAUrban,
+    img: iPadAir6M2,
   },
   {
     id: 14,
