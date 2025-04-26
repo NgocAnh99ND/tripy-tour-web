@@ -1,7 +1,7 @@
 import { useState } from "react";
 import React from "react";
 import DefaultProductCard from "./DefaultProductCard";
-import { productOnlineOnly } from "./productOnlineOnly";
+import { productOnlineOnly } from "./ProductOnlineOnly";
 import "./Recommend.css";
 import "./HotPromotion.css";
 import { FaAngleDown } from "react-icons/fa";
