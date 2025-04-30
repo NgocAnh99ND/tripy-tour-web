@@ -1,22 +1,29 @@
-SET FOREIGN_KEY_CHECKS = 0;
+SET FOREIGN_KEY_CHECKS = 0; 
+-- tắt kiểm tra ràng buộc khóa ngoại (foreign key constraints)
 
-CREATE TABLE Users (
+CREATE TABLE users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     phone VARCHAR(20),
     address VARCHAR(255)
 );
 
-CREATE TABLE Product (
-    product_id INT AUTO_INCREMENT PRIMARY KEY,
-    product_name VARCHAR(100) NOT NULL,
-    image VARCHAR(255),
-    price DECIMAL(10,2) NOT NULL,
+CREATE TABLE product (
+    product_id INT PRIMARY KEY,
+    product_name VARCHAR(255) NOT NULL,
+    image VARCHAR(255) NOT NULL,
+    price INT NOT NULL,
+    old_price INT NOT NULL,
     color VARCHAR(50),
-    description TEXT
+    description TEXT,
+    ram VARCHAR(50) NOT NULL,
+    ssd VARCHAR(50) NOT NULL,
+    gift VARCHAR(255),
+    rating DECIMAL(2,1)
 );
 
-CREATE TABLE Discount (
+
+CREATE TABLE discount (
     discount_id INT AUTO_INCREMENT PRIMARY KEY,
     code VARCHAR(50),
     discount_percent INT,
@@ -24,7 +31,7 @@ CREATE TABLE Discount (
     end_date DATE
 );
 
-CREATE TABLE Orders (
+CREATE TABLE orders (
     order_id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,
     order_date DATE,
@@ -37,37 +44,37 @@ CREATE TABLE Orders (
     payment_method VARCHAR(50),
     discount_id INT,
 
-    FOREIGN KEY (user_id) REFERENCES Users(user_id),
-    FOREIGN KEY (discount_id) REFERENCES Discount(discount_id)
+    FOREIGN KEY (user_id) REFERENCES users(user_id),
+    FOREIGN KEY (discount_id) REFERENCES discount(discount_id)
 );
 
-CREATE TABLE Cart (
+CREATE TABLE cart (
     cart_id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT,
     
-    FOREIGN KEY (user_id) REFERENCES Users(user_id)
+    FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
 
-CREATE TABLE Cart_Product (
+CREATE TABLE cart_product (
     id INT AUTO_INCREMENT PRIMARY KEY,
     cart_id INT,
     product_id INT,
     quantity INT DEFAULT 1,
     
-    FOREIGN KEY (cart_id) REFERENCES Cart(cart_id),
-    FOREIGN KEY (product_id) REFERENCES Product(product_id)
+    FOREIGN KEY (cart_id) REFERENCES cart(cart_id),
+    FOREIGN KEY (product_id) REFERENCES product(product_id)
 );
 
-CREATE TABLE Product_Order (
+CREATE TABLE product_order (
     id INT AUTO_INCREMENT PRIMARY KEY,
     order_id INT,
     product_id INT,
     quantity INT DEFAULT 1,
     
-    FOREIGN KEY (order_id) REFERENCES Orders(order_id),
-    FOREIGN KEY (product_id) REFERENCES Product(product_id)
+    FOREIGN KEY (order_id) REFERENCES orders(order_id),
+    FOREIGN KEY (product_id) REFERENCES product(product_id)
 );
 
 SET FOREIGN_KEY_CHECKS = 1;
-
+-- bật kiểm tra ràng buộc khóa ngoại (foreign key constraints)
