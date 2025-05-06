@@ -1,14 +1,20 @@
 import React from "react";
-import "./HotPromotion.css";
+import "../HotPromotion/HotPromotion.css";
+import { useNavigate } from "react-router-dom";
 
 const FlashSaleProductCard = ({ product }) => {
   const stockMatch = product.stock.match(/(\d+)\/(\d+)/);
   const stockLeft = stockMatch ? parseInt(stockMatch[1], 10) : 0;
   const totalStock = stockMatch ? parseInt(stockMatch[2], 10) : 1;
   const percentage = (stockLeft / totalStock) * 100;
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/product/${product.id}`);
+  };
 
   return (
-    <div className="product-card">
+    <div className="product-card" onClick={handleClick}>
       <img src={product.img} alt={product.name} className="product-image" />
       <h3 className="product-name">{product.name}</h3>
       <p className="product-price">

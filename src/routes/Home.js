@@ -1,14 +1,14 @@
 import React from "react";
-import Header from "../components/Header";
+import Header from "../components/Header/Header";
 import "./Home.css";
-import HotPromotion from "../components/HotPromotion";
-import Recommend from "../components/Recommend";
-import PromotionBooth from "../components/PromotionBooth";
-import ExclusiveProduct from "../components/ExclusiveProduct";
-import Social from "../components/Social";
+import HotPromotion from "../components/HotPromotion/HotPromotion"
+import Recommend from "../components/Recommend/Recommend";
+import PromotionBooth from "../components/PromotionBooth/PromotionBooth";
+import ExclusiveProduct from "../components/ExclusiveProduct/ExclusiveProduct";
+import Social from "../components/Social/Social";
 import banner from "../image/banner.png";
-import SearchTags from "../components/Searchtag";
-import Footer from "../components/Footer";
+import SearchTags from "../components/Searchtag/Searchtag";
+import Footer from "../components/Footer/Footer";
 
 function Home() {
   return (

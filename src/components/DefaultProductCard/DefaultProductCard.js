@@ -1,5 +1,5 @@
 import React from "react";
-import "./HotPromotion.css";
+import "../HotPromotion/HotPromotion.css";
 import "./DefaultProductCard.css";
 import { FaStar } from "react-icons/fa";
 

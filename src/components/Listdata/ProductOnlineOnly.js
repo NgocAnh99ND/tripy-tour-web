@@ -1,15 +1,15 @@
-import xiaomi14T from "../image/xiaomi14T.jpg";
-import Elitebook from "../image/Elitebook.jpg";
-import ThinkpadX13 from "../image/ThinkpadX13.jpg";
-import DellG15 from "../image/DellG15.jpg";
-import MSIGaming from "../image/MSIGaming.jpg";
-import Samsung34 from "../image/Samsung34.jpg";
-import AkkoHamsterPlus from "../image/AkkoHamsterPlus.jpg";
-import FESTINA41 from "../image/FESTINA41.jpg";
-import SonyWH1000XM5 from "../image/SonyWH1000XM5.jpg";
-import ORIENTStar from "../image/ORIENTStar.jpg";
-import CERTINAUrban from "../image/CERTINAUrban.jpg";
-import Akko3087 from "../image/Akko3087.jpg";
+import xiaomi14T from "../../image/xiaomi14T.jpg";
+import Elitebook from "../../image/Elitebook.jpg";
+import ThinkpadX13 from "../../image/ThinkpadX13.jpg";
+import DellG15 from "../../image/DellG15.jpg";
+import MSIGaming from "../../image/MSIGaming.jpg";
+import Samsung34 from "../../image/Samsung34.jpg";
+import AkkoHamsterPlus from "../../image/AkkoHamsterPlus.jpg";
+import FESTINA41 from "../../image/FESTINA41.jpg";
+import SonyWH1000XM5 from "../../image/SonyWH1000XM5.jpg";
+import ORIENTStar from "../../image/ORIENTStar.jpg";
+import CERTINAUrban from "../../image/CERTINAUrban.jpg";
+import Akko3087 from "../../image/Akko3087.jpg";
 
 export const productOnlineOnly = [
   {

@@ -1,6 +1,6 @@
 import "./Header.css";
 import React, { useState, useEffect } from "react";
-import logo from "../image/logo.jpg";
+import logo from "../../image/logo.jpg";
 import {
   FaUser,
   FaShoppingCart,

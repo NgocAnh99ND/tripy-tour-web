@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./ExclusiveProduct.css";
-import "./HotPromotion.css";
-import bannerExclusiveproduct from "../image/banner-exclusiveproduct.png";
-import { exclusiveProductList } from "./exclusiveProductlist";
-import DefaultProductCard from "./DefaultProductCard";
+import "../HotPromotion/HotPromotion.css";
+import bannerExclusiveproduct from "../../image/banner-exclusiveproduct.png";
+import { exclusiveProductList } from "../Listdata/exclusiveProductlist";
+import DefaultProductCard from "../DefaultProductCard/DefaultProductCard"
 
 const itemsPerPage = 4;
 

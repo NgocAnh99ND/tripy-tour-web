@@ -1,9 +1,9 @@
 import { useState } from "react";
 import React from "react";
-import DefaultProductCard from "./DefaultProductCard";
-import { productOnlineOnly } from "./ProductOnlineOnly";
+import DefaultProductCard from "../DefaultProductCard/DefaultProductCard";
+import { productOnlineOnly } from "../Listdata/ProductOnlineOnly";
 import "./Recommend.css";
-import "./HotPromotion.css";
+import "../HotPromotion/HotPromotion.css";
 import { FaAngleDown } from "react-icons/fa";
 
 const Recommend = () => {

@@ -1,12 +1,12 @@
 import { useState } from "react";
 import "./HotPromotion.css";
-import flashsale from "../image/flashsale.png";
-import onlineonly from "../image/onlineonly.png";
-import vodoi from "../image/vodoi.jpg";
-import { products } from "./ProductSale.js";
-import { productOnlineOnly } from "./ProductOnlineOnly.js";
-import FlashSaleProductCard from "./FlashSaleProductCard";
-import DefaultProductCard from "./DefaultProductCard";
+import flashsale from "../../image/flashsale.png";
+import onlineonly from "../../image/onlineonly.png";
+import vodoi from "../../image/vodoi.jpg";
+import { products } from "../Listdata/ProductSale.js";
+import { productOnlineOnly } from "../Listdata/ProductOnlineOnly.js";
+import FlashSaleProductCard from "../FlashSaleProductCard/FlashSaleProductCard.js";
+import DefaultProductCard from "../DefaultProductCard/DefaultProductCard.js"
 import { FaAngleDown } from "react-icons/fa";
 
 function HotPromotion() {

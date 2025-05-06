@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 import "./Footer.css";
-import tuyendung from "../image/tuyendung.jpeg";
-import thodienmayxanh from "../image/thodienmayxanh.png";
-import logotopzone from "../image/topzone.png";
-import erablue from "../image/erablue.png";
-import dienmayxanh from "../image/dienmayxanh.png";
-import bachhoaxanh from "../image/bachhoaxanh.png";
-import avakid from "../image/ava.jpeg";
-import nhathuoc from "../image/nhathuoc.png";
-import Facebook from "../image/FB.png";
-import Youtube from "../image/YTB.png";
-import Zalo from "../image/ZL.png";
-import Protected from "../image/protect.50.jpg";
+import tuyendung from "../../image/tuyendung.jpeg";
+import thodienmayxanh from "../../image/thodienmayxanh.png";
+import logotopzone from "../../image/topzone.png";
+import erablue from "../../image/erablue.png";
+import dienmayxanh from "../../image/dienmayxanh.png";
+import bachhoaxanh from "../../image/bachhoaxanh.png";
+import avakid from "../../image/ava.jpeg";
+import nhathuoc from "../../image/nhathuoc.png";
+import Facebook from "../../image/FB.png";
+import Youtube from "../../image/YTB.png";
+import Zalo from "../../image/ZL.png";
+import Protected from "../../image/protect.50.jpg";
 
 function Footer() {
   const [showMore, setShowMore] = useState(false);

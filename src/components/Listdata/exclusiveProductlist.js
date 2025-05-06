@@ -1,10 +1,10 @@
-import AkkoHamsterPlus from "../image/AkkoHamsterPlus.jpg";
-import oppoA38 from "../image/oppo-a38.jpg";
-import SonyWH1000XM5 from "../image/SonyWH1000XM5.jpg";
-import ORIENTStar from "../image/ORIENTStar.jpg";
-import iPadAir6M2 from "../image/iPadAir6M2.jpg";
-import Akko3087 from "../image/Akko3087.jpg";
-import hpLaptop from "../image/hp-laptop.jpg";
+import AkkoHamsterPlus from "../../image/AkkoHamsterPlus.jpg";
+import oppoA38 from "../../image/oppo-a38.jpg";
+import SonyWH1000XM5 from "../../image/SonyWH1000XM5.jpg";
+import ORIENTStar from "../../image/ORIENTStar.jpg";
+import iPadAir6M2 from "../../image/iPadAir6M2.jpg";
+import Akko3087 from "../../image/Akko3087.jpg";
+import hpLaptop from "../../image/hp-laptop.jpg";
 
 export const exclusiveProductList = [
   {

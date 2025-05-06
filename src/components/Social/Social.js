@@ -1,9 +1,9 @@
 import React from "react";
 import "./Social.css";
-import social1 from "../image/social1.jpg";
-import social2 from "../image/social2.png";
-import social3 from "../image/social3.jpg";
-import social4 from "../image/social4.jpg";
+import social1 from "../../image/social1.jpg";
+import social2 from "../../image/social2.png";
+import social3 from "../../image/social3.jpg";
+import social4 from "../../image/social4.jpg";
 import { FaChevronRight } from "react-icons/fa";
 
 function Social() {

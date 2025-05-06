@@ -1,8 +1,8 @@
 import "./PromotionBooth.css";
-import banner1 from "../image/banner1.png";
-import banner2 from "../image/banner2.png";
-import banner3 from "../image/banner3.png";
-import banner4 from "../image/banner4.jpg";
+import banner1 from "../../image/banner1.png";
+import banner2 from "../../image/banner2.png";
+import banner3 from "../../image/banner3.png";
+import banner4 from "../../image/banner4.jpg";
 
 function PromotionBooth() {
   return (
