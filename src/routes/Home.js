@@ -1,27 +1,47 @@
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
-import Destination from "../components/Destination";
-import Trip from "../components/Trip";
-import Footer from "../components/Footer";
+import React from "react";
+import Header from "../components/Header/Header";
+import "./Home.css";
+import HotPromotion from "../components/HotPromotion/HotPromotion"
+import Recommend from "../components/Recommend/Recommend";
+import PromotionBooth from "../components/PromotionBooth/PromotionBooth";
+import ExclusiveProduct from "../components/ExclusiveProduct/ExclusiveProduct";
+import Social from "../components/Social/Social";
+import banner from "../image/banner.png";
+import SearchTags from "../components/Searchtag/Searchtag";
+import Footer from "../components/Footer/Footer";
 
 function Home() {
-    return(
-        <>
-            <Navbar/>
-            <Hero 
-            cName="hero"
-            heroImg="https://images.unsplash.com/photo-1546587348-d12660c30c50?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1174&q=80"
-            title="Your Journey Your Story"
-            text="Choose Your Favourite Destination."
-            buttonText="Travel Plan"
-            url="/"
-            btnClass="show"
-            />
-            <Destination />
-            <Trip />
-            <Footer />
-        </>
-    );
+  return (
+    <div className="container">
+      <div className="banner-homepage">
+        <a href="#">
+          <img src={banner} alt="Khám phá các sản phẩm mới nhất." />
+        </a>
+      </div>
+      <Header />
+      <div className="header-section">
+        <h3 className="header-section">Khuyến mãi Online</h3>
+      </div>
+      <HotPromotion />
+      <Recommend />
+      <ExclusiveProduct />
+      <PromotionBooth />
+      <Social />
+      <SearchTags />
+      <Footer />
+      <div className="footer-bottom">
+        <p>
+          © 2018. Công ty cổ phần Thế Giới Di Động. GPDKKD: 0303217354 do sở KH
+          & ĐT TP.HCM cấp ngày 02/01/2007. GPMXH: 238/GP-BTTTT do Bộ Thông Tin
+          và Truyền Thông cấp ngày 04/06/2020. Địa chỉ: 128 Trần Quang Khải,
+          P.Tân Định, Q.1, TP.Hồ Chí Minh. Địa chỉ liên hệ và gửi chứng từ: Lô
+          T2-1.2, Đường D1, Đ. D1, P.Tân Phú, TP.Thủ Đức, TP.Hồ Chí Minh. Điện
+          thoại: 028 38125960. Email: cskh@thegioididong.com. Chịu trách nhiệm
+          nội dung: Huỳnh Văn Tốt. Email: hotrotmdt@thegioididong.com.
+        </p>
+      </div>
+    </div>
+  );
 }
 
 export default Home;
