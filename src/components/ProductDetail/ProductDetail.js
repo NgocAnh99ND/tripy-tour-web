@@ -443,9 +443,18 @@ function ProductDetail() {
                                     </>
                                 ) : (
                                     <div className="review-text">
-                                        OPPO A38 6GB chiếc điện thoại thông minh đáp ứng nhu cầu của người dùng hiện đại,
-                                        với nhiều ưu điểm nổi bật như pin lớn 5000 mAh, sạc nhanh 33 W, bộ vi xử lý mạnh mẽ,
-                                        màn hình sắc nét và camera chuyên nghiệp.
+                                        <span>
+                                            OPPO A38 6GB chiếc điện thoại thông minh đáp ứng nhu cầu của người dùng hiện đại,
+                                            với nhiều ưu điểm nổi bật như pin lớn 5000 mAh, sạc nhanh 33 W, bộ vi xử lý mạnh mẽ,
+                                            màn hình sắc nét và camera chuyên nghiệp.
+                                        </span>
+                                        <br />
+                                        <span>Pin lớn, sạc nhanh, sẵn sàng cho mọi hành trình</span>
+                                        <br />OPPO A38 được trang bị viên pin lớn 5000 mAh, cho phép bạn sử dụng thoải mái cả ngày dài mà không lo hết pin. Với viên pin này, bạn có thể sử dụng điện thoại liên tục trong nhiều giờ, dù là xem video, trò chuyện hay chơi game.
+                                        <br /> Đặc biệt, với công nghệ sạc nhanh 33 W, bạn chỉ cần sạc khoảng 30 phút là có thể sạc đầy 50% pin, giúp bạn tiết kiệm thời gian chờ đợi (theo công bố từ hãng). Điều này giúp bạn không cần lo lắng về việc hết pin khi đang cần thiết, tăng tính trải nghiệm liền mạch.
+                                        <br />
+                                        <span>Hiệu năng mạnh mẽ, đáp ứng mọi nhu cầu</span>
+                                        <br />Bộ vi xử lý MediaTek Helio G85 của OPPO A38 được thiết kế để mang lại hiệu suất cao trong mọi tác vụ, đặc biệt là chơi game. Bạn có thể trải nghiệm các tựa game yêu thích một cách mượt mà và ổn định, nhờ vào thuật toán tối ưu hiệu năng của OPPO.
                                     </div>
                                 )}
                             </div>
@@ -535,16 +544,50 @@ function ProductDetail() {
                         </span>
                     </div>
 
-                    <div className="price-box">
-                        <div className="price-title">🔥 Online Giá Rẻ Quá</div>
-                        <div className="price-value">{product.price}</div>
-                        <div className="price-old">
-                            <del>4.490.000₫</del> <span className="discount">-11%</span>
+                    <div className="ordering-information">
+                        <div className="price-box">
+                            <div>
+                                <div className="price-title">🔥 Online Giá Rẻ Quá</div>
+                                <div className="price-value">{product.price}</div>
+                                <div className="price-old">
+                                    <del>4.490.000₫</del> <span className="discount">(-11%)</span>
+                                </div>
+                            </div>
+                            <div>
+                                <div className="location">Kết thúc tại <strong>Hà Nội</strong></div>
+                            </div>
                         </div>
-                        <div className="price-note">Kết thúc vào 23:00 | 31/05</div>
-                        <div className="location">Tại <strong>Hà Nội</strong></div>
+                        <div className="bs_content">
+                            <div class="promotion-box">
+                                <div className="pr-top">
+                                    <p class="promotion-title">Khuyến mãi</p>
+                                    <i class="promotion-subtitle">Giá và khuyến mãi có thể kết thúc sớm hơn dự kiến</i>
+                                </div>
+
+                                <div class="promotion-details">
+                                    <div class="promotion-item">
+                                        <span class="promotion-item-number">1</span>
+                                        <span class="promotion-description">Phiếu mua hàng máy lọc nước trị giá 300.000đ</span>
+                                    </div>
+                                    <div class="promotion-item">
+                                        <span class="promotion-item-number">2</span>
+                                        <span class="promotion-description">Phiếu mua hàng áp dụng mua tất cả sim có gói Mobi, Itel, Local, Vina và VNMB trị giá 50.000đ. (<a href="https://www.thegioididong.com/tin-tuc/4-chiec-sim-nay-xai-tha-ga-den-8-gb-ngay-1570316">Xem chi tiết tại đây</a>)</span>
+                                    </div>
+                                    <div class="promotion-item">
+                                        <span class="promotion-item-number">3</span>
+                                        <span class="promotion-description">Nhập mã VNPAYTGDD2 giảm từ 80.000đ đến 150.000đ (áp dụng tùy giá trị đơn hàng) khi thanh toán qua VNPAY-QR. (<a href="https://www.thegioididong.com/tin-tuc/nhap-ma-vnpaytgdd1-giam-toi-da-150k-1573706">Xem chi tiết tại đây</a>)</span>
+                                    </div>
+                                    <div class="promotion-extra">
+                                        <span>Giao hàng nhanh chóng (tùy khu vực)</span><br />
+                                        <span>Mỗi số điện thoại chỉ mua 3 sản phẩm trong 1 tháng</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+
             </div>
             <Footer />
             <div className="footer-bottom">
