@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { products } from "../Listdata/ProductSale";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import CartView from "../CartView/CartView";
+import { useNavigate } from 'react-router-dom';
 import './ProductDetail.css';
 import bannerdetail from "../../image/banner-detail.png";
 import oppoa38detail from "../../image/oppo-a38-detail.jpg";
@@ -30,7 +32,16 @@ function ProductDetail() {
     const [showCameraSpec, setShowCameraSpec] = useState(false);
     const [showConnectionSpec, setShowConnectionSpec] = useState(false);
     const [showDesignSpec, setShowDesignSpec] = useState(false);
+    const [showCart, setShowCart] = useState(false);
 
+    const navigate = useNavigate();
+
+    const handleBuyNow = () => {
+        setShowCart(true);
+
+        navigate('/cart');
+    };
+    
     const handlePrev = () => {
         if (currentIndex > 0) setCurrentIndex(currentIndex - 1);
     };
@@ -565,21 +576,77 @@ function ProductDetail() {
                                 </div>
 
                                 <div class="promotion-details">
-                                    <div class="promotion-item">
-                                        <span class="promotion-item-number">1</span>
-                                        <span class="promotion-description">Phiếu mua hàng máy lọc nước trị giá 300.000đ</span>
-                                    </div>
-                                    <div class="promotion-item">
-                                        <span class="promotion-item-number">2</span>
-                                        <span class="promotion-description">Phiếu mua hàng áp dụng mua tất cả sim có gói Mobi, Itel, Local, Vina và VNMB trị giá 50.000đ. (<a href="https://www.thegioididong.com/tin-tuc/4-chiec-sim-nay-xai-tha-ga-den-8-gb-ngay-1570316">Xem chi tiết tại đây</a>)</span>
-                                    </div>
-                                    <div class="promotion-item">
-                                        <span class="promotion-item-number">3</span>
-                                        <span class="promotion-description">Nhập mã VNPAYTGDD2 giảm từ 80.000đ đến 150.000đ (áp dụng tùy giá trị đơn hàng) khi thanh toán qua VNPAY-QR. (<a href="https://www.thegioididong.com/tin-tuc/nhap-ma-vnpaytgdd1-giam-toi-da-150k-1573706">Xem chi tiết tại đây</a>)</span>
+                                    <div class="promotion-content">
+                                        <div class="promotion-item">
+                                            <span class="promotion-item-number">1</span>
+                                            <span class="promotion-description">Phiếu mua hàng máy lọc nước trị giá 300.000đ</span>
+                                        </div>
+                                        <div class="promotion-item">
+                                            <span class="promotion-item-number">2</span>
+                                            <span class="promotion-description">Phiếu mua hàng áp dụng mua tất cả sim có gói Mobi, Itel, Local, Vina và VNMB trị giá 50.000đ. (<a href="https://www.thegioididong.com/tin-tuc/4-chiec-sim-nay-xai-tha-ga-den-8-gb-ngay-1570316">Xem chi tiết tại đây</a>)</span>
+                                        </div>
+                                        <div class="promotion-item">
+                                            <span class="promotion-item-number">3</span>
+                                            <span class="promotion-description">Nhập mã VNPAYTGDD2 giảm từ 80.000đ đến 150.000đ (áp dụng tùy giá trị đơn hàng) khi thanh toán qua VNPAY-QR. (<a href="https://www.thegioididong.com/tin-tuc/nhap-ma-vnpaytgdd1-giam-toi-da-150k-1573706">Xem chi tiết tại đây</a>)</span>
+                                        </div>
                                     </div>
                                     <div class="promotion-extra">
                                         <span>Giao hàng nhanh chóng (tùy khu vực)</span><br />
                                         <span>Mỗi số điện thoại chỉ mua 3 sản phẩm trong 1 tháng</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="shipping-info">
+                                <h3>Thông tin vận chuyển</h3>
+                                <p><strong>Giao đến:</strong> số 12 ngách 12 ngõ 165 Dương Quang Hàm, Phường Quan Hoa, Quận Cầu Giấy, Hà Nội <a href="#">Thay đổi</a></p>
+                                <div class="shipping-details">
+                                    <p><strong>Giao tiết kiệm:<br />
+                                    </strong> Giao từ 16h - 18h, ngày 13/05 (Thứ Ba): <span class="free">Miễn phí</span></p>
+                                </div>
+                                <div class="line"></div>
+                                <div class="online-payment">
+                                    <h4>Ưu đãi thanh toán Online</h4>
+                                    <p>(Click chọn để áp dụng)</p>
+                                    <label class="discount">
+                                        <input type="checkbox" class="checkbox" />
+                                        <span class="checkbox-custom"></span>
+                                        <span class="checkbox-text">Giảm 50.000đ - 200.000đ</span><br />
+                                        <span class="additional-info">Sản phẩm từ 500.000đ</span>
+                                    </label>
+                                </div>
+                                <div class="line"></div>
+                                <div class="loyalty">
+                                    <div class="points-info">
+                                        <span class="points">+7.980<p> điểm tích lũy Quà Tặng VIP</p></span>
+                                    </div>
+
+                                    <div>
+                                        {!showCart ? (
+                                            <div class="button-group">
+                                                <button class="btn add-to-cart">
+                                                    <i class="fas fa-shopping-cart"></i> Thêm vào giỏ
+                                                </button>
+                                                <button class="btn buy-now" onClick={handleBuyNow}>
+                                                    Mua ngay
+                                                </button>
+                                            </div>
+                                        ) : (
+                                            <CartView />
+                                        )}
+
+                                    </div>
+
+                                    <div class="payment-options">
+                                        <button class="buy-later">Mua trả chậm <br /><span class="buy-later-info">Duyệt hồ sơ trong 5 phút</span></button>
+
+                                        <button class="btn pay-card">
+                                            Trả chậm qua thẻ <br /><span class="subtext">Visa, Mastercard, JCB, Amex</span>
+                                        </button>
+                                    </div>
+
+                                    <div class="contact-info">
+                                        <span class="phone">Gọi đặt mua 1900 232 460 (8:00 - 21:30)</span>
+                                        <span class="store-link">Xem siêu thị có hàng</span>
                                     </div>
                                 </div>
                             </div>

@@ -172,7 +172,7 @@
   background-color: white;
   padding: 18px;
   max-width: 460px;
-  max-height:1110px
+  max-height: 1147px;
 }
 
 .banner-detail {
@@ -189,7 +189,6 @@
 
 /* Giá sản phẩm */
 .price-box {
-  /* background: linear-gradient(135deg, #ff6a00, #ffb000); */
   color: white;
   padding: 15px 10px 16px 10px;
   border-radius: 10px;
@@ -827,7 +826,7 @@
   color: #667085;
 }
 
-.promotion-details {
+.promotion-content {
   padding: 0 10px;
 }
 
@@ -867,10 +866,231 @@
   font-size: 13px;
   color: #dc6803;
   text-align: start;
+  background-color: #fffaeb;
+  padding: 10px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
 }
 
 .promotion-extra span:first-child {
   font-weight: normal;
+}
+
+.shipping-info {
+  padding: 0 10px;
+  text-align: start;
+}
+
+.shipping-info h3 {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.shipping-info strong {
+  font-size: 13px;
+}
+
+.shipping-info p {
+  font-size: 13px;
+}
+
+.shipping-info a:hover {
+  text-decoration: underline;
+}
+
+.line {
+  border-top: 1px solid #d3d3d3;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.shipping-details p {
+  margin-top: 6px;
+}
+
+.free {
+  color: #039855;
+}
+
+.online-payment {
+  margin-top: 6px;
+}
+
+.online-payment h4,
+p {
+  display: inline;
+  margin: 2px;
+}
+
+.online-payment h4 {
+  font-size: 14px;
+}
+
+.online-payment p {
+  font-size: 14px;
+  color: #98a2b3;
+}
+
+.online-payment label {
+  display: block;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.online-payment input[type="checkbox"] {
+  margin-right: 6px;
+}
+
+.checkbox:checked+.checkbox-custom::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.checkbox-text {
+  font-size: 14px;
+  color: black;
+  flex-grow: 1;
+}
+
+.additional-info {
+  font-size: 12px;
+  color: #98a2b3;
+  margin-left: 20px;
+}
+
+.points-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.points {
+  font-size: 13px;
+  color: #344054;
+  font-weight: bold;
+}
+
+.points p {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.vip-gift {
+  margin-left: 10px;
+  font-size: 14px;
+  color: #999;
+}
+
+.button-group {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 7px;
+}
+
+button {
+  font-size: 14px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.pay-later {
+  background-color: #2f80ed;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 13px;
+  line-height: 16px;
+  padding: 7px 0;
+  text-align: center;
+  text-decoration: none;
+  padding: 3px 8px;
+}
+
+.add-to-cart {
+  padding: 12px 20px;
+  background-color: white;
+  color: #007bff;
+  border: 1px solid #2a83e9;
+  border-radius: 8px;
+}
+
+.buy-now {
+  padding: 12px 20px;
+  background-color: #ff7f00;
+  color: white;
+}
+
+.buy-now:hover {
+  background-color: #e97a00;
+}
+
+.payment-options {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 13px;
+}
+
+.buy-later,
+.installment-payment {
+  padding: 3px 8px;
+  background-color: #2f80ed;
+  color: white;
+  border-radius: 8px;
+  font-size: 14px;
+  width: 100%;
+}
+
+.buy-later:hover,
+.installment-payment:hover {
+  background-color: #0077cc;
+}
+
+.buy-later-info,
+.installment-info {
+  font-size: 12px;
+  color: #bbddfd;
+  margin-top: 5px;
+}
+
+.pay-card {
+  padding: 3px 8px;
+  background-color: #2f80ed;
+  color: white;
+  border-radius: 8px;
+  font-size: 14px;
+  width: 100%;
+}
+
+.pay-card .subtext {
+  font-size: 12px;
+  color: #bbddfd;
+  margin-top: 5px;
+}
+
+.contact-info {
+  font-size: 14px;
+  color: #555;
+}
+
+.phone {
+  display: block;
+  margin-bottom: 3px;
+}
+
+.store-link {
+  color: #007bff;
+  cursor: pointer;
+}
+
+.store-link:hover {
+  text-decoration: underline;
 }
 
 .footer-bottom {
