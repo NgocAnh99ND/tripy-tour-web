@@ -1,0 +1,141 @@
+.footer-container {
+    background-color: #fff;
+    padding: 20px;
+    color: #333;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .footer-container h4 {
+    font-size: 13px;
+    font-weight: bold;
+    color: #1d2939;
+    text-align: left;
+  }
+  
+  .footer-container ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .footer-container li {
+    margin: 8px 0;
+    font-size: 14px;
+    text-align: left;
+  }
+  
+  .support a {
+    text-decoration: none;
+    color: #007aff;
+    transition: color 0.2s;
+    font-weight: 700;
+  }
+
+  .company a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  
+  .info a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .toggle-btn {
+    background-color: #fff;
+    border: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .toggle-btn:hover {
+    color: #0051cc;
+  }
+
+  .less-icon, .more-icon {
+    margin-left: 5px;
+    font-size: 14px;
+  }
+
+  .footer-container a:hover {
+    color: #0051cc;
+  }
+  
+  .support, .company, .info, .websites {
+    width: 288px;
+  }
+
+  .websites h4 {
+    color: #222;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+  }
+  
+  .website-links {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 600px;
+    margin-top: 10px;
+  }
+  
+  .website-links a {
+    display: block;
+    border-radius: 12px;
+    padding: 6px;
+  }
+  
+  .website-links img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: contain;
+  }
+  
+  .social {
+    margin-left: auto;
+    text-align: right;
+}
+
+  .social-media {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .social-media img {
+    pointer-events: auto !important;
+    height: 18px;
+    width: 18px;
+    margin-right: 8px;
+  }
+  
+  .social-media a {
+    text-decoration: none;
+    color: #007aff;
+    font-weight: normal;
+    font-size: 14px;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+  }
+  
+  .social-media a:hover {
+    color: #0051cc;
+  }
+  
+  .protected-group img {
+    width: 355px;
+    height: 87.5px;
+  }
+  
+  
