@@ -75,6 +75,7 @@
   border-radius: 4px;
   padding: 4px 4px;
   cursor: pointer;
+  width: 75px;
 }
 
 .like-btn:hover,
