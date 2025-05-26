@@ -1,8 +1,12 @@
 import React from 'react';
 import './CartView.css';
+import DeliveryTimeModal from '../DeliveryTimeModal/DeliveryTimeModal'
 import { useState } from 'react';
 import Header from "../Header/Header";
 import oppoa38detail4 from "../../image/oppo-a38-detail4.jpeg";
+import emptyVoucher from "../../image/emptyVoucher.png"
+import ShippingInfoModal from '../ShippingInfoModal/ShippingInfoModal';
+
 
 const CartView = () => {
 
@@ -17,6 +21,16 @@ const CartView = () => {
         // Xử lý xóa sản phẩm khỏi giỏ hàng ở đây
         alert('Đã xóa sản phẩm!');
     };
+
+    const [showDeliveryModal, setShowDeliveryModal] = useState(false);
+    const [deliveryTime, setDeliveryTime] = useState("Giao trước 16h, thứ năm (15/05)");
+    const [showShippingModal, setShowShippingModal] = useState(false);
+    const [recipientName, setRecipientName] = useState("Nguyễn Văn A");
+    const [recipientPhone, setRecipientPhone] = useState("0838406607");
+    const [deliveryAddress, setDeliveryAddress] = useState(
+        "số 12 ngách 12 ngõ 165 Dương Quảng Hàm, Phường Quan Hoa, Quận..."
+    );
+
 
     const handleOrder = () => {
         if (!agreePolicy) {
@@ -38,8 +52,16 @@ const CartView = () => {
                 <div className="cart-fragment">
                     <div className="address">
                         <p className='address-title'>Vui lòng cung cấp thông tin nhận hàng</p><br />
-                        <p>📍 số 12 ngách 12 ngõ 165 Dương Quảng Hàm, Phường Quan Hoa, Quận...</p>
+                        <p>
+                            <strong>Người nhận:</strong> {recipientName} - {recipientPhone}
+                        </p>
+                        <br/>
+                        <p>
+                            📍 {deliveryAddress}
+                            <span className="address-icon" onClick={() => setShowShippingModal(true)}> &gt; </span>
+                        </p>
                     </div>
+
                     <div className="product">
                         <img
                             src={oppoa38detail4}
@@ -76,8 +98,13 @@ const CartView = () => {
                         </div>
                     </div>
                     <div className="line">
-                        <span><strong>Giao trước 16h, thứ năm (15/05)</strong></span>
-                        <span style={{ color: '#007bff', cursor: 'pointer' }}>Đổi thời gian</span>
+                        <span><strong>{deliveryTime}</strong></span>
+                        <span
+                            style={{ color: '#007bff', cursor: 'pointer' }}
+                            onClick={() => setShowDeliveryModal(true)}
+                        >
+                            Đổi thời gian
+                        </span>
                     </div>
                     <div className="line">
                         <span>Phí giao hàng</span>
@@ -135,12 +162,12 @@ const CartView = () => {
                                     <button className="apply-btn" disabled>Áp dụng</button>
                                 </div>
 
-                                <p style={{fontSize: "15px"}} >
-                                    Hoặc <a href="#" style={{ color: '#007bff', textDecoration: "none"}}>Đăng nhập</a> để sử dụng nhanh mã giảm giá đang có
+                                <p style={{ fontSize: "15px" }} >
+                                    Hoặc <a href="#" style={{ color: '#007bff', textDecoration: "none" }}>Đăng nhập</a> để sử dụng nhanh mã giảm giá đang có
                                 </p>
 
                                 <div className="empty-state">
-                                    <img src="/path-to-image.svg" alt="Empty Discount" />
+                                    <img src={emptyVoucher} alt="Empty Discount" />
                                     <p><strong>Mã giảm giá trống</strong></p>
                                     <p style={{ color: '#888', fontSize: "13px" }}>Vui lòng nhập mã giảm có thể sử dụng vào thanh bên trên</p>
                                 </div>
@@ -230,6 +257,30 @@ const CartView = () => {
                         </div>
                     )}
                 </div>
+                {showDeliveryModal && (
+                    <DeliveryTimeModal
+                        onClose={() => setShowDeliveryModal(false)}
+                        onSave={(newTime) => setDeliveryTime(`Giao trước ${newTime}`)}
+                    />
+                )}
+
+                {showShippingModal && (
+                    <ShippingInfoModal
+                        onClose={() => setShowShippingModal(false)}
+                        onConfirm={({ name, phone, address }) => {
+                            setRecipientName(name);
+                            setRecipientPhone(phone);
+                            setDeliveryAddress(address);
+                            setShowShippingModal(false);
+                        }}
+                        initialValues={{
+                            name: recipientName,
+                            phone: recipientPhone,
+                            address: deliveryAddress,
+                        }}
+                    />
+                )}
+
 
             </div>
         </div>

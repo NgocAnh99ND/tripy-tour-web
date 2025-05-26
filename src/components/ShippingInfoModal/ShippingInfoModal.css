@@ -1,0 +1,126 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.shipping-modal {
+    background: white;
+    border-radius: 8px;
+    padding: 24px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    font-family: sans-serif;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.modal-header h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.close-btn {
+    position: absolute;
+    right: 0;
+    top: -4px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #888;
+}
+
+.section {
+    margin-top: 20px;
+}
+
+.section-title {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.gender-options {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.login-note {
+    font-size: 13px;
+    color: #555;
+}
+
+.login-note a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.delivery-methods {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 12px;
+}
+
+.delivery-methods button {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    background: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.delivery-methods .active {
+    border-color: #007bff;
+    background-color: #e7f1ff;
+    color: #007bff;
+}
+
+.address-info {
+    font-size: 14px;
+    color: #333;
+}
+
+.change-address {
+    color: #007bff;
+    font-size: 13px;
+    margin-top: 6px;
+    cursor: pointer;
+}
+
+.confirm-btn {
+    width: 100%;
+    margin-top: 24px;
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
