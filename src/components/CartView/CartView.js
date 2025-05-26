@@ -3,7 +3,7 @@ import './CartView.css';
 import DeliveryTimeModal from '../DeliveryTimeModal/DeliveryTimeModal'
 import { useState } from 'react';
 import Header from "../Header/Header";
-import oppoa38detail4 from "../../image/oppo-a38-detail4.jpeg";
+// import oppoa38detail4 from "../../image/oppo-a38-detail4.jpeg";
 import emptyVoucher from "../../image/emptyVoucher.png"
 import ShippingInfoModal from '../ShippingInfoModal/ShippingInfoModal';
 
@@ -64,7 +64,7 @@ const CartView = () => {
 
                     <div className="product">
                         <img
-                            src={oppoa38detail4}
+                            src="/image/oppo-a38-detail4.jpeg"
                             alt="OPPO A38"
                         />
                         <div className="product-info">

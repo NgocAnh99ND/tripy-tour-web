@@ -1,22 +1,34 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./HotPromotion.css";
 import flashsale from "../../image/flashsale.png";
 import onlineonly from "../../image/onlineonly.png";
 import vodoi from "../../image/vodoi.jpg";
-import { products } from "../Listdata/ProductSale.js";
+// import { products } from "../Listdata/ProductSale.js";
 import { productOnlineOnly } from "../Listdata/ProductOnlineOnly.js";
 import FlashSaleProductCard from "../FlashSaleProductCard/FlashSaleProductCard.js";
-import DefaultProductCard from "../DefaultProductCard/DefaultProductCard.js"
+import DefaultProductCard from "../DefaultProductCard/DefaultProductCard.js";
 import { FaAngleDown } from "react-icons/fa";
 
 function HotPromotion() {
   const [activeTab, setActiveTab] = useState("flashsale");
   const [startIndex, setStartIndex] = useState(0);
   const [showMore, setShowMore] = useState(false);
+  const [productListFromAPI, setProductListFromAPI] = useState([]);
   const itemsPerPage = 12;
 
+  useEffect(() => {
+    fetch("http://localhost:8080/products")
+      .then((response) => response.json())
+      .then((data) => {
+        setProductListFromAPI(data);
+      })
+      .catch((error) => {
+        console.error("Lỗi khi fetch dữ liệu sản phẩm:", error);
+      });
+  }, []);
+
   const productsByTab = {
-    flashsale: products,
+    flashsale: productListFromAPI,
     onlineonly: productOnlineOnly,
     vodoi: productOnlineOnly,
     dienthoai: productOnlineOnly,
@@ -33,7 +45,7 @@ function HotPromotion() {
     setShowMore(false);
   };
 
-  const totalProducts = productsByTab[activeTab].length;
+  const totalProducts = productsByTab[activeTab]?.length || 0;
 
   function nextSlide() {
     if (startIndex + itemsPerPage < totalProducts) {
@@ -106,6 +118,7 @@ function HotPromotion() {
             </a>
           </li>
         </ul>
+
         <div className="product-carousel">
           {activeTab === "flashsale" ? (
             <>
@@ -124,9 +137,24 @@ function HotPromotion() {
                     return (
                       <div
                         className="product-item-hotPromotion"
-                        key={product.id}
+                        key={product.productId}
                       >
-                        <ProductCard product={product} />
+                        <ProductCard
+                          product={{
+                            id: product.productId,
+                            name: product.productName,
+                            img: product.image,
+                            price: product.price.toLocaleString("vi-VN") + "₫",
+                            oldPrice:
+                              product.oldPrice.toLocaleString("vi-VN") + "₫",
+                            stock: "3/10", // dữ liệu giả, có thể tùy chỉnh
+                            discount: `-${Math.round(
+                              ((product.oldPrice - product.price) /
+                                product.oldPrice) *
+                                100
+                            )}%`,
+                          }}
+                        />
                       </div>
                     );
                   })}
@@ -147,7 +175,10 @@ function HotPromotion() {
                 {productList.map((product) => {
                   const ProductCard = getProductCard();
                   return (
-                    <div className="product-item-hotPromotion" key={product.id}>
+                    <div
+                      className="product-item-hotPromotion"
+                      key={product.productId}
+                    >
                       <ProductCard product={product} />
                     </div>
                   );

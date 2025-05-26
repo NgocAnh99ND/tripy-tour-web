@@ -25,7 +25,7 @@ import Repeater from "../../image/Repeater.jpg";
 export const products = [
   {
     id: 1,
-    name: "OPPO A38 6GB/128GB",
+    name: "OPPO A38 test 6GB/128GB",
     price: "3.990.000₫",
     oldPrice: "4.490.000₫",
     discount: "-11%",

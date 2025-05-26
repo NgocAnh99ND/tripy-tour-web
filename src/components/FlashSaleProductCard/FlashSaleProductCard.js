@@ -15,7 +15,11 @@ const FlashSaleProductCard = ({ product }) => {
 
   return (
     <div className="product-card" onClick={handleClick}>
-      <img src={product.img} alt={product.name} className="product-image" />
+      <img
+        src={`/images/${product.img}`} // dùng URL tương đối
+        alt={product.name}
+        className="product-image"
+      />
       <h3 className="product-name">{product.name}</h3>
       <p className="product-price">
         {product.price.replace("₫", "")}
