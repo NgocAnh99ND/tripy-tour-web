@@ -1,10 +1,5 @@
 import { useEffect, useState } from "react";
 import "./HotPromotion.css";
-import flashsale from "../../image/flashsale.png";
-import onlineonly from "../../image/onlineonly.png";
-import vodoi from "../../image/vodoi.jpg";
-// import { products } from "../Listdata/ProductSale.js";
-import { productOnlineOnly } from "../Listdata/ProductOnlineOnly.js";
 import FlashSaleProductCard from "../FlashSaleProductCard/FlashSaleProductCard.js";
 import DefaultProductCard from "../DefaultProductCard/DefaultProductCard.js";
 import { FaAngleDown } from "react-icons/fa";
@@ -14,10 +9,11 @@ function HotPromotion() {
   const [startIndex, setStartIndex] = useState(0);
   const [showMore, setShowMore] = useState(false);
   const [productListFromAPI, setProductListFromAPI] = useState([]);
+  const [productOnlineOnlyFromAPI, setProductOnlineOnlyFromAPI] = useState([]);
   const itemsPerPage = 12;
 
   useEffect(() => {
-    fetch("http://localhost:8080/products")
+    fetch("http://localhost:8080/products1to23")
       .then((response) => response.json())
       .then((data) => {
         setProductListFromAPI(data);
@@ -27,15 +23,26 @@ function HotPromotion() {
       });
   }, []);
 
+  useEffect(() => {
+    fetch("http://localhost:8080/products24to37")
+      .then((response) => response.json())
+      .then((data) => {
+        setProductOnlineOnlyFromAPI(data);
+      })
+      .catch((error) => {
+        console.error("Lỗi khi fetch dữ liệu sản phẩm:", error);
+      });
+  }, []);
+
   const productsByTab = {
     flashsale: productListFromAPI,
-    onlineonly: productOnlineOnly,
-    vodoi: productOnlineOnly,
-    dienthoai: productOnlineOnly,
-    apple: productOnlineOnly,
-    laptop: productOnlineOnly,
-    phukien: productOnlineOnly,
-    dongho: productOnlineOnly,
+    onlineonly: productOnlineOnlyFromAPI,
+    vodoi: productOnlineOnlyFromAPI,
+    dienthoai: productOnlineOnlyFromAPI,
+    apple: productOnlineOnlyFromAPI,
+    laptop: productOnlineOnlyFromAPI,
+    phukien: productOnlineOnlyFromAPI,
+    dongho: productOnlineOnlyFromAPI,
   };
 
   const handleTabClick = (event, tabName) => {
@@ -70,8 +77,8 @@ function HotPromotion() {
     activeTab === "flashsale"
       ? productsByTab[activeTab]
       : showMore
-      ? productsByTab[activeTab]
-      : productsByTab[activeTab].slice(0, itemsPerPage);
+        ? productsByTab[activeTab]
+        : productsByTab[activeTab].slice(0, itemsPerPage);
 
   return (
     <div className="hot-promotion">
@@ -79,17 +86,17 @@ function HotPromotion() {
         <ul className="products-tab">
           <li className={activeTab === "flashsale" ? "selected" : ""}>
             <a href="#" onClick={(e) => handleTabClick(e, "flashsale")}>
-              <img src={flashsale} alt="flashsale" />
+              <img src="/image/flashsale.png" alt="flashsale" />
             </a>
           </li>
           <li className={activeTab === "onlineonly" ? "selected" : ""}>
             <a href="#" onClick={(e) => handleTabClick(e, "onlineonly")}>
-              <img src={onlineonly} alt="onlineonly" />
+              <img src="/image/onlineonly.png" alt="onlineonly" />
             </a>
           </li>
           <li className={activeTab === "vodoi" ? "selected" : ""}>
             <a href="#" onClick={(e) => handleTabClick(e, "vodoi")}>
-              <img src={vodoi} alt="vodoi" />
+              <img src="/image/vodoi.jpg" alt="vodoi" />
             </a>
           </li>
           <li className={activeTab === "dienthoai" ? "selected" : ""}>
@@ -151,7 +158,7 @@ function HotPromotion() {
                             discount: `-${Math.round(
                               ((product.oldPrice - product.price) /
                                 product.oldPrice) *
-                                100
+                              100
                             )}%`,
                           }}
                         />
@@ -161,9 +168,8 @@ function HotPromotion() {
               </div>
 
               <button
-                className={`arrow right ${
-                  startIndex + itemsPerPage >= totalProducts ? "disabled" : ""
-                }`}
+                className={`arrow right ${startIndex + itemsPerPage >= totalProducts ? "disabled" : ""
+                  }`}
                 onClick={nextSlide}
               >
                 ❯
@@ -179,7 +185,26 @@ function HotPromotion() {
                       className="product-item-hotPromotion"
                       key={product.productId}
                     >
-                      <ProductCard product={product} />
+                      <ProductCard
+                        product={{
+                          id: product.productId,
+                          name: product.productName,
+                          img: product.image,
+                          price: product.price.toLocaleString("vi-VN") + "₫",
+                          oldPrice:
+                            product.oldPrice.toLocaleString("vi-VN") + "₫",
+                          stock: "3/10", // dữ liệu giả, có thể tùy chỉnh
+                          discount: `-${Math.round(
+                            ((product.oldPrice - product.price) /
+                              product.oldPrice) *
+                            100
+                          )}%`,
+                          ram: product.ram,
+                          ssd: product.ssd,
+                          gift: product.gift,
+                          rating: product.rating
+                        }}
+                      />
                     </div>
                   );
                 })}

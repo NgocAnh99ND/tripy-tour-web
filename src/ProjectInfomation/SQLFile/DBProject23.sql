@@ -13,11 +13,11 @@ CREATE TABLE product (
     product_name VARCHAR(255) NOT NULL,
     image VARCHAR(255) NOT NULL,
     price INT NOT NULL,
-    old_price INT NOT NULL,
+    old_price INT,
     color VARCHAR(50),
     description TEXT,
-    ram VARCHAR(50) NOT NULL,
-    ssd VARCHAR(50) NOT NULL,
+    ram VARCHAR(50),
+    ssd VARCHAR(50),
     gift VARCHAR(255),
     rating DECIMAL(2,1)
 );

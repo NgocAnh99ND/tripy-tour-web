@@ -6,25 +6,13 @@ import Footer from "../Footer/Footer";
 import CartView from "../CartView/CartView";
 import { useNavigate } from 'react-router-dom';
 import './ProductDetail.css';
-import bannerdetail from "../../image/banner-detail.png";
-import oppoa38detail from "../../image/oppo-a38-detail.jpg";
-import oppoa38detail2 from "../../image/oppo-a38-detail2.jpeg";
-import oppoa38detail3 from "../../image/oppo-a38-detail3.jpeg";
-import oppoa38detail4 from "../../image/oppo-a38-detail4.jpeg";
-import rattingimg1 from "../../image/ratting-img1.jpg";
-import rattingimg2 from "../../image/ratting-img2.jpg";
-import rattingimg3 from "../../image/ratting-img3.jpg";
-import rattingimg4 from "../../image/ratting-img4.jpg";
-import rattingimg5 from "../../image/ratting-img5.jpg";
-import specifications from "../../image/thong-so-ky-thuat.jpg";
 import { FaAngleDown } from "react-icons/fa";
+import {images, ratingImages} from "../ProductDetail/ImageArrays"
 
 function ProductDetail() {
     const { id } = useParams();
     const product = products.find((p) => String(p.id) === id);
-    const images = [oppoa38detail, oppoa38detail2, oppoa38detail3, oppoa38detail4];
     const [selectedColor, setSelectedColor] = useState("vangdong");
-    const ratingImages = [rattingimg1, rattingimg2, rattingimg3, rattingimg4, rattingimg5];
     const [currentIndex, setCurrentIndex] = useState(0);
     const [activeTab, setActiveTab] = useState(0);
     const [showFullSpec, setShowFullSpec] = useState(false);
@@ -41,7 +29,7 @@ function ProductDetail() {
 
         navigate('/cart');
     };
-    
+
     const handlePrev = () => {
         if (currentIndex > 0) setCurrentIndex(currentIndex - 1);
     };
@@ -198,7 +186,7 @@ function ProductDetail() {
                             <div className="content">
                                 {activeTab === 0 ? (
                                     <>
-                                        <img className="product-image" src={specifications} alt="Chi tiết điện thoại" />
+                                        <img className="product-image" src="/image/thong-so-ky-thuat.jpg" alt="Chi tiết điện thoại" />
                                         {/* Accordion: Cấu hình & Bộ nhớ */}
                                         <div className="spec-toggle-box">
                                             <div className="spec-header" onClick={() => setShowFullSpec(!showFullSpec)}>
@@ -531,7 +519,7 @@ function ProductDetail() {
                 {/* RIGHT: Info Box */}
                 <div className="product-info-box">
                     <div className="info-banner">
-                        <img src={bannerdetail} alt="detail-banner" className="banner-detail" />
+                        <img src="/image/banner-detail.png" alt="detail-banner" className="banner-detail" />
                     </div>
 
                     <div className="color-selector">

@@ -1,15 +1,15 @@
-import xiaomi14T from "../../image/xiaomi14T.jpg";
-import Elitebook from "../../image/Elitebook.jpg";
-import ThinkpadX13 from "../../image/ThinkpadX13.jpg";
-import DellG15 from "../../image/DellG15.jpg";
-import MSIGaming from "../../image/MSIGaming.jpg";
-import Samsung34 from "../../image/Samsung34.jpg";
-import AkkoHamsterPlus from "../../image/AkkoHamsterPlus.jpg";
-import FESTINA41 from "../../image/FESTINA41.jpg";
-import SonyWH1000XM5 from "../../image/SonyWH1000XM5.jpg";
-import ORIENTStar from "../../image/ORIENTStar.jpg";
-import CERTINAUrban from "../../image/CERTINAUrban.jpg";
-import Akko3087 from "../../image/Akko3087.jpg";
+// import xiaomi14T from "../../image/xiaomi14T.jpg";
+// import Elitebook from "../../image/Elitebook.jpg";
+// import ThinkpadX13 from "../../image/ThinkpadX13.jpg";
+// import DellG15 from "../../image/DellG15.jpg";
+// import MSIGaming from "../../image/MSIGaming.jpg";
+// import Samsung34 from "../../image/Samsung34.jpg";
+// import AkkoHamsterPlus from "../../image/AkkoHamsterPlus.jpg";
+// import FESTINA41 from "../../image/FESTINA41.jpg";
+// import SonyWH1000XM5 from "../../image/SonyWH1000XM5.jpg";
+// import ORIENTStar from "../../image/ORIENTStar.jpg";
+// import CERTINAUrban from "../../image/CERTINAUrban.jpg";
+// import Akko3087 from "../../image/Akko3087.jpg";
 
 export const productOnlineOnly = [
   {
@@ -22,7 +22,7 @@ export const productOnlineOnly = [
     discount: "-19%",
     rating: "4.9",
     sold: "• Đã bán 3,1k",
-    img: xiaomi14T,
+    // img: xiaomi14T,
   },
   {
     id: 2,
@@ -34,7 +34,7 @@ export const productOnlineOnly = [
     gift: "Quà 2.190.000₫",
     rating: "5",
     sold: "• Đã bán 37",
-    img: Elitebook,
+    // img: Elitebook,
   },
   {
     id: 3,
@@ -46,7 +46,7 @@ export const productOnlineOnly = [
     gift: "Quà 2.190.000₫",
     rating: "5",
     sold: "• Đã bán 4",
-    img: ThinkpadX13,
+    // img: ThinkpadX13,
   },
   {
     id: 4,
@@ -59,7 +59,7 @@ export const productOnlineOnly = [
     gift: "Quà 100.000₫",
     rating: "5",
     sold: "• Đã bán 16",
-    img: DellG15,
+    // img: DellG15,
   },
   {
     id: 5,
@@ -71,7 +71,7 @@ export const productOnlineOnly = [
     gift: "Quà 2.190.000₫",
     rating: "5",
     sold: "• Đã bán 36",
-    img: MSIGaming,
+    // img: MSIGaming,
   },
   {
     id: 6,
@@ -82,7 +82,7 @@ export const productOnlineOnly = [
     oldPrice: "7.230.000₫",
     rating: "5",
     sold: "• Đã bán 37",
-    img: Samsung34,
+    // img: Samsung34,
   },
   {
     id: 7,
@@ -92,14 +92,14 @@ export const productOnlineOnly = [
     discount: "-20%",
     rating: "5",
     sold: "• Đã bán 10",
-    img: AkkoHamsterPlus,
+    // img: AkkoHamsterPlus,
   },
   {
     id: 8,
     name: "FESTINA 41 mm Nam F20358/4",
     price: "2.920.000₫",
     rating: "4.3",
-    img: FESTINA41,
+    // img: FESTINA41,
   },
   {
     id: 9,
@@ -109,7 +109,7 @@ export const productOnlineOnly = [
     discount: "-13%",
     rating: "5",
     sold: "• Đã bán 106",
-    img: SonyWH1000XM5,
+    // img: SonyWH1000XM5,
   },
   {
     id: 10,
@@ -117,14 +117,14 @@ export const productOnlineOnly = [
     price: "13.864.000₫",
     oldPrice: "17.330.000₫",
     discount: "-20%",
-    img: ORIENTStar,
+    // img: ORIENTStar,
   },
   {
     id: 11,
     name: "CERTINA Urban 39 mm Nam C035.410.22.037.02",
     price: "12.150.000₫",
     sold: "• Đã bán 1",
-    img: CERTINAUrban,
+    // img: CERTINAUrban,
   },
   {
     id: 12,
@@ -133,14 +133,14 @@ export const productOnlineOnly = [
     oldPrice: "1.700.000₫",
     discount: "-12%",
     sold: "• Đã bán 1",
-    img: Akko3087,
+    // img: Akko3087,
   },
   {
     id: 13,
     name: "CERTINA Urban 39 mm Nam C035.410.22.037.02",
     price: "12.150.000₫",
     sold: "• Đã bán 1",
-    img: CERTINAUrban,
+    // img: CERTINAUrban,
   },
   {
     id: 14,
@@ -149,6 +149,6 @@ export const productOnlineOnly = [
     oldPrice: "1.700.000₫",
     discount: "-12%",
     sold: "• Đã bán 1",
-    img: Akko3087,
+    // img: Akko3087,
   },
 ];

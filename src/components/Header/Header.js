@@ -1,6 +1,5 @@
 import "./Header.css";
 import React, { useState, useEffect } from "react";
-import logo from "../../image/logo.jpg";
 import {
   FaUser,
   FaShoppingCart,
@@ -46,7 +45,7 @@ function Header() {
         {/* Logo */}
         <div className="header__logo">
           <a href="/">
-            <img src={logo} alt="Thegioididong" />
+            <img src="/image/logo.jpg" alt="Thegioididong" />
           </a>
         </div>
 

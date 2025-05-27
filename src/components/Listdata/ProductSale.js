@@ -1,26 +1,26 @@
-import oppoA38 from "../../image/oppo-a38.jpg";
-import appleWatch from "../../image/apple-watch.jpg";
-import hpLaptop from "../../image/hp-laptop.jpg";
-import hikvisionMonitor from "../../image/hikvision-monitor.jpg";
-import camera360 from "../../image/camera-ip.jpg";
-import realmenote from "../../image/realme-note.jpg";
-import iPadAir6M2 from "../../image/iPadAir6M2.jpg";
-import IdeaPadSlim from "../../image/IdeaPadSlim.jpg";
-import TUFGamingA15 from "../../image/TUFGamingA15.jpg";
-import MVWGlory43 from "../../image/MVWGlory43.jpg";
-import AVAQ7 from "../../image/AVAQ7.jpg";
-import MagsafeIp from "../../image/MagsafeIp.jpg";
-import CITIZEN from "../../image/CITIZEN.jpg";
-import LogitechM171 from "../../image/LogitechM171.jpg";
-import AcerAspire from "../../image/AcerAspire.jpg";
-import ROSACrystal from "../../image/ROSACrystal.jpg";
-import ELIO31 from "../../image/ELIO31.jpg";
-import Soundmax from "../../image/Soundmax.jpg";
-import BluetoothMonster from "../../image/BluetoothMonster.jpg";
-import iPadmini from "../../image/iPadmini.jpg";
-import LS24C310EAEXXV from "../../image/LS24C310EAEXXV.jpg";
-import Kidcare from "../../image/Kidcare.jpg";
-import Repeater from "../../image/Repeater.jpg";
+// import oppoA38 from "../../image/oppo-a38.jpg";
+// import appleWatch from "../../image/apple-watch.jpg";
+// import hpLaptop from "../../image/hp-laptop.jpg";
+// import hikvisionMonitor from "../../image/hikvision-monitor.jpg";
+// import camera360 from "../../image/camera-ip.jpg";
+// import realmenote from "../../image/realme-note.jpg";
+// import iPadAir6M2 from "../../image/iPadAir6M2.jpg";
+// import IdeaPadSlim from "../../image/IdeaPadSlim.jpg";
+// import TUFGamingA15 from "../../image/TUFGamingA15.jpg";
+// import MVWGlory43 from "../../image/MVWGlory43.jpg";
+// import AVAQ7 from "../../image/AVAQ7.jpg";
+// import MagsafeIp from "../../image/MagsafeIp.jpg";
+// import CITIZEN from "../../image/CITIZEN.jpg";
+// import LogitechM171 from "../../image/LogitechM171.jpg";
+// import AcerAspire from "../../image/AcerAspire.jpg";
+// import ROSACrystal from "../../image/ROSACrystal.jpg";
+// import ELIO31 from "../../image/ELIO31.jpg";
+// import Soundmax from "../../image/Soundmax.jpg";
+// import BluetoothMonster from "../../image/BluetoothMonster.jpg";
+// import iPadmini from "../../image/iPadmini.jpg";
+// import LS24C310EAEXXV from "../../image/LS24C310EAEXXV.jpg";
+// import Kidcare from "../../image/Kidcare.jpg";
+// import Repeater from "../../image/Repeater.jpg";
 
 export const products = [
   {
@@ -30,7 +30,7 @@ export const products = [
     oldPrice: "4.490.000₫",
     discount: "-11%",
     stock: "Còn 11/15 suất",
-    img: oppoA38,
+    // img: "/image/oppo-a38.jpg",
   },
   {
     id: 2,
@@ -39,7 +39,7 @@ export const products = [
     oldPrice: "10.990.000₫",
     discount: "-7%",
     stock: "Còn 5/5 suất",
-    img: appleWatch,
+    // img: appleWatch,
   },
   {
     id: 3,
@@ -48,7 +48,7 @@ export const products = [
     oldPrice: "12.790.000₫",
     discount: "-20%",
     stock: "Còn 5/5 suất",
-    img: hpLaptop,
+    // img: hpLaptop,
   },
   {
     id: 4,
@@ -57,7 +57,7 @@ export const products = [
     oldPrice: "1.950.000₫",
     discount: "-18%",
     stock: "Còn 5/5 suất",
-    img: hikvisionMonitor,
+    // img: hikvisionMonitor,
   },
   {
     id: 5,
@@ -66,7 +66,7 @@ export const products = [
     oldPrice: "790.000₫",
     discount: "-25%",
     stock: "Còn 10/10 suất",
-    img: camera360,
+    // img: camera360,
   },
   {
     id: 6,
@@ -75,7 +75,7 @@ export const products = [
     oldPrice: "3.090.000₫",
     discount: "-9%",
     stock: "Còn 6/15 suất",
-    img: realmenote,
+    // img: realmenote,
   },
   {
     id: 7,
@@ -84,7 +84,7 @@ export const products = [
     oldPrice: "34.490.000₫",
     discount: "-13%",
     stock: "Còn 1/5 suất",
-    img: iPadAir6M2,
+    // img: iPadAir6M2,
   },
   {
     id: 8,
@@ -93,7 +93,7 @@ export const products = [
     oldPrice: "28.690.000₫",
     discount: "-10%",
     stock: "Còn 5/10 suất",
-    img: IdeaPadSlim,
+    // img: IdeaPadSlim,
   },
   {
     id: 9,
@@ -102,7 +102,7 @@ export const products = [
     oldPrice: "30.990.000₫",
     discount: "-12%",
     stock: "Còn 5/5 suất",
-    img: TUFGamingA15,
+    // img: TUFGamingA15,
   },
   {
     id: 10,
@@ -111,7 +111,7 @@ export const products = [
     oldPrice: "1.290.000₫",
     discount: "-50%",
     stock: "Còn 2/10 suất",
-    img: MVWGlory43,
+    // img: MVWGlory43,
   },
   {
     id: 11,
@@ -120,7 +120,7 @@ export const products = [
     oldPrice: "590.000₫",
     discount: "-54%",
     stock: "Còn 29/30 suất",
-    img: AVAQ7,
+    // img: AVAQ7,
   },
   {
     id: 12,
@@ -129,7 +129,7 @@ export const products = [
     oldPrice: "790.000₫",
     discount: "-50%",
     stock: "Còn 10/10 suất",
-    img: MagsafeIp,
+    // img: MagsafeIp,
   },
   {
     id: 13,
@@ -138,7 +138,7 @@ export const products = [
     oldPrice: "12.485.000₫",
     discount: "-49%",
     stock: "Còn 5/5 suất",
-    img: CITIZEN,
+    // img: CITIZEN,
   },
   {
     id: 14,
@@ -147,7 +147,7 @@ export const products = [
     oldPrice: "320.000₫",
     discount: "-18%",
     stock: "Còn 18/20 suất",
-    img: LogitechM171,
+    // img: LogitechM171,
   },
   {
     id: 15,
@@ -156,7 +156,7 @@ export const products = [
     oldPrice: "15.090.000₫",
     discount: "-18%",
     stock: "Còn 10/10 suất",
-    img: AcerAspire,
+    // img: AcerAspire,
   },
   {
     id: 16,
@@ -165,7 +165,7 @@ export const products = [
     oldPrice: "12.790.000₫",
     discount: "-8%",
     stock: "Còn 5/5 suất",
-    img: ROSACrystal,
+    // img: ROSACrystal,
   },
   {
     id: 17,
@@ -174,7 +174,7 @@ export const products = [
     oldPrice: "1.090.000₫",
     discount: "-74%",
     stock: "Còn 4/5 suất",
-    img: ELIO31,
+    // img: ELIO31,
   },
   {
     id: 18,
@@ -183,7 +183,7 @@ export const products = [
     oldPrice: "500.000₫",
     discount: "-16%",
     stock: "Còn 5/5 suất",
-    img: Soundmax,
+    // img: Soundmax,
   },
   {
     id: 19,
@@ -192,7 +192,7 @@ export const products = [
     oldPrice: "3.890.000₫",
     discount: "-42%",
     stock: "Còn 5/5 suất",
-    img: BluetoothMonster,
+    // img: BluetoothMonster,
   },
   {
     id: 20,
@@ -201,7 +201,7 @@ export const products = [
     oldPrice: "17.990.000₫",
     discount: "-3%",
     stock: "Còn 5/5 suất",
-    img: iPadmini,
+    // img: iPadmini,
   },
   {
     id: 21,
@@ -210,7 +210,7 @@ export const products = [
     oldPrice: "2.590.000₫",
     discount: "-15%",
     stock: "Còn 5/5 suất",
-    img: LS24C310EAEXXV,
+    // img: LS24C310EAEXXV,
   },
   {
     id: 22,
@@ -219,7 +219,7 @@ export const products = [
     oldPrice: "2.890.000₫",
     discount: "-17%",
     stock: "Còn 5/5 suất",
-    img: Kidcare,
+    // img: Kidcare,
   },
   {
     id: 23,
@@ -228,6 +228,6 @@ export const products = [
     oldPrice: "250.000₫",
     discount: "-8%",
     stock: "Còn 17/20 suất",
-    img: Repeater,
+    // img: Repeater,
   },
 ];

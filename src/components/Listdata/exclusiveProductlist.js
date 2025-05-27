@@ -1,10 +1,10 @@
-import AkkoHamsterPlus from "../../image/AkkoHamsterPlus.jpg";
-import oppoA38 from "../../image/oppo-a38.jpg";
-import SonyWH1000XM5 from "../../image/SonyWH1000XM5.jpg";
-import ORIENTStar from "../../image/ORIENTStar.jpg";
-import iPadAir6M2 from "../../image/iPadAir6M2.jpg";
-import Akko3087 from "../../image/Akko3087.jpg";
-import hpLaptop from "../../image/hp-laptop.jpg";
+// import AkkoHamsterPlus from "../../image/AkkoHamsterPlus.jpg";
+// import oppoA38 from "../../image/oppo-a38.jpg";
+// import SonyWH1000XM5 from "../../image/SonyWH1000XM5.jpg";
+// import ORIENTStar from "../../image/ORIENTStar.jpg";
+// import iPadAir6M2 from "../../image/iPadAir6M2.jpg";
+// import Akko3087 from "../../image/Akko3087.jpg";
+// import hpLaptop from "../../image/hp-laptop.jpg";
 
 export const exclusiveProductList = [
   {
@@ -15,7 +15,7 @@ export const exclusiveProductList = [
     discount: "-20%",
     rating: "5",
     sold: "• Đã bán 10",
-    img: AkkoHamsterPlus,
+    // img: AkkoHamsterPlus,
   },
   {
     id: 8,
@@ -24,7 +24,7 @@ export const exclusiveProductList = [
     oldPrice: "4.490.000₫",
     discount: "-11%",
     rating: "5",
-    img: oppoA38,
+    // img: oppoA38,
   },
   {
     id: 9,
@@ -34,7 +34,7 @@ export const exclusiveProductList = [
     discount: "-13%",
     rating: "5",
     sold: "• Đã bán 106",
-    img: SonyWH1000XM5,
+    // img: SonyWH1000XM5,
   },
   {
     id: 10,
@@ -43,7 +43,7 @@ export const exclusiveProductList = [
     oldPrice: "17.330.000₫",
     discount: "-20%",
     rating: "5",
-    img: ORIENTStar,
+    // img: ORIENTStar,
   },
   {
     id: 11,
@@ -52,7 +52,7 @@ export const exclusiveProductList = [
     oldPrice: "12.790.000₫",
     discount: "-20%",
     sold: "• Đã bán 1",
-    img: hpLaptop,
+    // img: hpLaptop,
   },
   {
     id: 12,
@@ -61,7 +61,7 @@ export const exclusiveProductList = [
     oldPrice: "1.700.000₫",
     discount: "-12%",
     sold: "• Đã bán 1",
-    img: Akko3087,
+    // img: Akko3087,
   },
   {
     id: 13,
@@ -70,7 +70,7 @@ export const exclusiveProductList = [
     oldPrice: "34.490.000₫",
     discount: "-13%",
     sold: "• Đã bán 1",
-    img: iPadAir6M2,
+    // img: iPadAir6M2,
   },
   {
     id: 14,
@@ -79,6 +79,6 @@ export const exclusiveProductList = [
     oldPrice: "1.700.000₫",
     discount: "-12%",
     sold: "• Đã bán 1",
-    img: Akko3087,
+    // img: Akko3087,
   },
 ];

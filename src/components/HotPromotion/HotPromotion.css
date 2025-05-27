@@ -275,6 +275,7 @@
     cursor: pointer;
     color: #2a83e9;
     font-weight: bold;
+    justify-content: center;
   }
   
   .show-more-btn:hover {

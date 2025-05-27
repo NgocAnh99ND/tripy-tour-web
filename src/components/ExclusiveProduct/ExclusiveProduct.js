@@ -1,17 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./ExclusiveProduct.css";
 import "../HotPromotion/HotPromotion.css";
-import bannerExclusiveproduct from "../../image/banner-exclusiveproduct.png";
-import { exclusiveProductList } from "../Listdata/exclusiveProductlist";
 import DefaultProductCard from "../DefaultProductCard/DefaultProductCard"
 
 const itemsPerPage = 4;
 
 const ExclusiveProduct = () => {
   const [startIndex, setStartIndex] = useState(0);
+  const [productOnlineOnlyFromAPI, setProductOnlineOnlyFromAPI] = useState([]);
 
   function nextSlide() {
-    const totalItems = exclusiveProductList.length;
+    const totalItems = productOnlineOnlyFromAPI.length;
     if (startIndex + itemsPerPage < totalItems) {
       setStartIndex(startIndex + itemsPerPage);
     }
@@ -23,20 +22,30 @@ const ExclusiveProduct = () => {
     }
   }
 
+  useEffect(() => {
+    fetch("http://localhost:8080/products24to37")
+      .then((response) => response.json())
+      .then((data) => {
+        setProductOnlineOnlyFromAPI(data);
+      })
+      .catch((error) => {
+        console.error("Lỗi khi fetch dữ liệu sản phẩm:", error);
+      });
+  }, []);
+
   return (
     <div className="exclusiveProduct-container">
       <h3 className="exclusiveProduct-title">Sản Phẩm Đặc Quyền</h3>
       <div className="exclusiveProduct-content">
         <div className="exclusiveProduct-banner">
           <a href="#">
-            <img src={bannerExclusiveproduct} alt="Sản Phẩm Đặc Quyền." />
+            <img src="/image/banner-exclusiveproduct.png" alt="Sản Phẩm Đặc Quyền." />
           </a>
         </div>
         <div className="product-carousel-exclusive">
           <button
-            className={`arrow left-exclusive ${
-              startIndex <= 0 ? "disabled" : ""
-            }`}
+            className={`arrow left-exclusive ${startIndex <= 0 ? "disabled" : ""
+              }`}
             onClick={prevSlide}
             disabled={startIndex <= 0}
           >
@@ -50,21 +59,38 @@ const ExclusiveProduct = () => {
                 transition: "transform 0.5s ease-in-out",
               }}
             >
-              {exclusiveProductList.map((product) => (
+              {productOnlineOnlyFromAPI.map((product) => (
                 <div key={product.id} className="product-item-exclusive">
-                  <DefaultProductCard product={product} />
+                  <DefaultProductCard
+                    product={{
+                      id: product.productId,
+                      name: product.productName,
+                      img: product.image,
+                      price: product.price.toLocaleString("vi-VN") + "₫",
+                      oldPrice:
+                        product.oldPrice.toLocaleString("vi-VN") + "₫",
+                      stock: "3/10", // dữ liệu giả, có thể tùy chỉnh
+                      discount: `-${Math.round(
+                        ((product.oldPrice - product.price) /
+                          product.oldPrice) *
+                        100
+                      )}%`,
+                      ram: product.ram,
+                      ssd: product.ssd,
+                      gift: product.gift,
+                      rating: product.rating
+                    }} />
                 </div>
               ))}
             </div>
           </div>
           <button
-            className={`arrow right-exclusive ${
-              startIndex + itemsPerPage >= exclusiveProductList.length
-                ? "disabled"
-                : ""
-            }`}
+            className={`arrow right-exclusive ${startIndex + itemsPerPage >= productOnlineOnlyFromAPI.length
+              ? "disabled"
+              : ""
+              }`}
             onClick={nextSlide}
-            disabled={startIndex + itemsPerPage >= exclusiveProductList.length}
+            disabled={startIndex + itemsPerPage >= productOnlineOnlyFromAPI.length}
           >
             ❯
           </button>

@@ -16,7 +16,7 @@ const FlashSaleProductCard = ({ product }) => {
   return (
     <div className="product-card" onClick={handleClick}>
       <img
-        src={`/images/${product.img}`} // dùng URL tương đối
+        src={product.img} // dùng URL tương đối
         alt={product.name}
         className="product-image"
       />

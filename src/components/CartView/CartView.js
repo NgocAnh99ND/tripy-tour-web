@@ -3,8 +3,6 @@ import './CartView.css';
 import DeliveryTimeModal from '../DeliveryTimeModal/DeliveryTimeModal'
 import { useState } from 'react';
 import Header from "../Header/Header";
-// import oppoa38detail4 from "../../image/oppo-a38-detail4.jpeg";
-import emptyVoucher from "../../image/emptyVoucher.png"
 import ShippingInfoModal from '../ShippingInfoModal/ShippingInfoModal';
 
 
@@ -91,7 +89,7 @@ const CartView = () => {
                 <div className="latch-order">
                     <h3>Thông tin nhận hàng:</h3>
                     <div className="product-summary">
-                        <img src={oppoa38detail4} alt="OPPO A38" />
+                        <img src="/image/oppo-a38-detail4.jpeg" alt="OPPO A38" />
                         <div className="details">
                             <p>Điện thoại OPPO A38 6GB/128GB</p>
                             <span>Màu: Vàng đồng &nbsp;&nbsp; SL: 1</span>
@@ -167,7 +165,7 @@ const CartView = () => {
                                 </p>
 
                                 <div className="empty-state">
-                                    <img src={emptyVoucher} alt="Empty Discount" />
+                                    <img src="/image/emptyVoucher.png" alt="Empty Discount" />
                                     <p><strong>Mã giảm giá trống</strong></p>
                                     <p style={{ color: '#888', fontSize: "13px" }}>Vui lòng nhập mã giảm có thể sử dụng vào thanh bên trên</p>
                                 </div>

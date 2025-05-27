@@ -6,7 +6,6 @@ import Recommend from "../components/Recommend/Recommend";
 import PromotionBooth from "../components/PromotionBooth/PromotionBooth";
 import ExclusiveProduct from "../components/ExclusiveProduct/ExclusiveProduct";
 import Social from "../components/Social/Social";
-import banner from "../image/banner.png";
 import SearchTags from "../components/Searchtag/Searchtag";
 import Footer from "../components/Footer/Footer";
 
@@ -15,7 +14,7 @@ function Home() {
     <div className="container">
       <div className="banner-homepage">
         <a href="#">
-          <img src={banner} alt="Khám phá các sản phẩm mới nhất." />
+          <img src="/image/banner.png" alt="Khám phá các sản phẩm mới nhất." />
         </a>
       </div>
       <Header />

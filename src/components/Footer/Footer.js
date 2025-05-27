@@ -1,18 +1,6 @@
 import React, { useState } from "react";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 import "./Footer.css";
-import tuyendung from "../../image/tuyendung.jpeg";
-import thodienmayxanh from "../../image/thodienmayxanh.png";
-import logotopzone from "../../image/topzone.png";
-import erablue from "../../image/erablue.png";
-import dienmayxanh from "../../image/dienmayxanh.png";
-import bachhoaxanh from "../../image/bachhoaxanh.png";
-import avakid from "../../image/ava.jpeg";
-import nhathuoc from "../../image/nhathuoc.png";
-import Facebook from "../../image/FB.png";
-import Youtube from "../../image/YTB.png";
-import Zalo from "../../image/ZL.png";
-import Protected from "../../image/protect.50.jpg";
 
 function Footer() {
   const [showMore, setShowMore] = useState(false);
@@ -116,28 +104,28 @@ function Footer() {
         <h4>Website của tập đoàn</h4>
         <div className="website-links">
           <a href="https://www.topzone.vn/">
-            <img src={logotopzone} alt="Topzone" />
+            <img src="/image/topzone.png" alt="Topzone" />
           </a>
           <a href="https://www.dienmayxanh.com/">
-            <img src={dienmayxanh} alt="Điện máy Xanh" />
+            <img src="/image/dienmayxanh.png" alt="Điện máy Xanh" />
           </a>
           <a href="https://www.bachhoaxanh.com/">
-            <img src={bachhoaxanh} alt="Bách hóa Xanh" />
+            <img src="/image/bachhoaxanh.png" alt="Bách hóa Xanh" />
           </a>
           <a href="https://www.nhathuocankhang.com/">
-            <img src={nhathuoc} alt="Nhà thuốc An Khang" />
+            <img src="/image/nhathuoc.png" alt="Nhà thuốc An Khang" />
           </a>
           <a href="https://www.avakids.com/">
-            <img src={avakid} alt="AVA Kid" />
+            <img src="/image/ava.jpeg" alt="AVA Kid" />
           </a>
           <a href="https://vieclam.thegioididong.com/">
-            <img src={tuyendung} alt="Việc làm" />
+            <img src="/image/tuyendung.jpeg" alt="Việc làm" />
           </a>
           <a href="https://www.erablue.id/">
-            <img src={erablue} alt="Erablue Electronics" />
+            <img src="/image/erablue.png" alt="Erablue Electronics" />
           </a>
           <a href="https://www.thodienmayxanh.com">
-            <img src={thodienmayxanh} alt="Thợ Sửa Chữa Xanh" />
+            <img src="/image/thodienmayxanh.png" alt="Thợ Sửa Chữa Xanh" />
           </a>
         </div>
       </div>
@@ -145,20 +133,20 @@ function Footer() {
       <div className="social">
         <div className="social-media">
           <a href="https://www.facebook.com/thegioididongcom">
-            <img src={Facebook} alt="Facebook" />
+            <img src="/image/FB.png" alt="Facebook" />
             3886.8k Fan
           </a>
           <a href="https://www.youtube.com/user/TGDDVideoReviews">
-            <img src={Youtube} alt="Youtube" />
+            <img src="/image/YTB.png" alt="Youtube" />
             873k Đăng ký
           </a>
           <a href="https://zalo.me/936590283559458736">
-            <img src={Zalo} alt="Zalo" />
+            <img src="/image/ZL.png" alt="Zalo" />
             Zalo TGDD
           </a>
         </div>
         <div className="protected-group">
-          <img src={Protected} alt="" />
+          <img src="/image/protect.50.jpg" alt="" />
         </div>
       </div>
     </div>
