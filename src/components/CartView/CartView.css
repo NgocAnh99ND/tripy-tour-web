@@ -551,10 +551,12 @@ input:checked+.slider:before {
     cursor: pointer;
 }
 
-.close-btn {
+.close-btn-cart-view {
     position: absolute;
-    top: 8px;
     right: 12px;
-    font-size: 20px;
+    top: 3px;
+    font-size: 24px;
+    font-weight: bold;
     cursor: pointer;
+    color: #888;
 }

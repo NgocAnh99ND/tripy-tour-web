@@ -148,7 +148,7 @@ const CartView = () => {
                             <div className="modal1">
                                 <div className="modal-header1">
                                     <p>Sử dụng mã giảm giá</p>
-                                    <span className="close-btn" onClick={() => setShowDiscountPopup(false)}>×</span>
+                                    <span className="close-btn-cart-view" onClick={() => setShowDiscountPopup(false)}>×</span>
                                 </div>
 
                                 <div className="discount-input-row">

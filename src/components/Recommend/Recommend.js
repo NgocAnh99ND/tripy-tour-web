@@ -19,7 +19,7 @@ const Recommend = () => {
     : productOnlineOnlyFromAPI.slice(0, itemsPerPage);
 
   useEffect(() => {
-    fetch("http://localhost:8080/products24to37")
+    fetch("http://localhost:8080/products?limit=14&offset=23")
       .then((response) => response.json())
       .then((data) => {
         setProductOnlineOnlyFromAPI(data);
