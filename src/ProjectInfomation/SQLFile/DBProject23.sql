@@ -3,7 +3,8 @@ SET FOREIGN_KEY_CHECKS = 0;
 
 CREATE TABLE users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
+    user_name VARCHAR(100) NOT NULL,
+    pass_word VARCHAR(255) NOT NULL,
     phone VARCHAR(20),
     address VARCHAR(255)
 );
