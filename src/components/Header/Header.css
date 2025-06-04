@@ -26,8 +26,8 @@
 }
 
 /* Logo */
-.header__logo img { 
-    width: auto;  
+.header__logo img {
+    width: auto;
     height: 40px;
     object-fit: contain;
 }
@@ -53,7 +53,7 @@
 
 .search-icon {
     margin-right: 10px;
-    color: gray; 
+    color: gray;
 }
 
 /* Các nút bên phải */
@@ -63,7 +63,8 @@
 }
 
 /* Các nút bấm */
-.header__item, .header__location {
+.header__item,
+.header__location {
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -80,7 +81,8 @@
     background-color: #fe9;
 }
 
-.header__item .icon, .header__location .icon {
+.header__item .icon,
+.header__location .icon {
     margin-right: 5px;
 }
 
@@ -110,15 +112,15 @@
     transition: top 0.3s ease-in-out;
     background-color: #ffd500;
     z-index: 90;
-  }
-  
-  .header__main.hidden {
-    display: none;
-  }
+}
 
-  .header__main {
+.header__main.hidden {
+    display: none;
+}
+
+.header__main {
     transition: top 0.3s ease-in-out;
-  }
+}
 
 .header__main li {
     display: flex;
@@ -157,9 +159,9 @@
 
 .header__main li.dropdown {
     position: relative;
-  }
-  
-  .dropdown-content {
+}
+
+.dropdown-content {
     display: none !important;
     visibility: hidden;
     opacity: 0;
@@ -172,17 +174,41 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     min-width: 160px;
     z-index: 100;
-  }
-  
-  .header__main li.dropdown:hover .dropdown-content {
+}
+
+.header__main li.dropdown:hover .dropdown-content {
     display: block !important;
     visibility: visible;
     opacity: 1;
-  }
-  
-  
-  
-  
+}
 
+.user-dropdown {
+    position: relative;
+}
 
+.dropdown-logout {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-top: 6px;
+    z-index: 100;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
 
+.dropdown-logout button {
+    background: none;
+    border: none;
+    padding: 10px 16px;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+}
+
+.dropdown-logout button:hover {
+    background-color: #f3f4f6;
+}

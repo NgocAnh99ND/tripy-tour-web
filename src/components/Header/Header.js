@@ -1,5 +1,7 @@
 import "./Header.css";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
+import { UserContext } from "../UserContext/UserContext";
 import {
   FaUser,
   FaShoppingCart,
@@ -21,6 +23,8 @@ import {
 
 function Header() {
   const [scrolling, setScrolling] = useState(false);
+  const { username, setUsername } = useContext(UserContext); // lấy username từ context
+  const [dropdownVisible, setDropdownVisible] = useState(false);
 
   useEffect(() => {
     // Sự kiện cuộn trang
@@ -31,13 +35,17 @@ function Header() {
         setScrolling(false); // Khi cuộn lên trên cùng thì hiển thị lại
       }
     };
-
     window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const handleLogout = () => {
+    setUsername(null); // xóa username khỏi context
+    setDropdownVisible(false); // đóng dropdown
+  };
 
   return (
     <header className="header v2024 fixed1 sticky1">
@@ -57,10 +65,29 @@ function Header() {
 
         {/* Các nút bên phải */}
         <div className="header__actions">
-          <a href="/login" className="header__item">
-            <FaUser className="icon" />
-            Đăng nhập
-          </a>
+          {/*Nếu đã đăng nhập: hiện tên + dropdown */}
+          {username ? (
+            <div className="user-dropdown">
+              <div
+                className="header__item"
+                onClick={() => setDropdownVisible(!dropdownVisible)}
+              >
+                <FaUser className="icon" />
+                {username}
+              </div>
+              {dropdownVisible && (
+                <div className="dropdown-logout">
+                  <button onClick={handleLogout}>Đăng xuất</button>
+                </div>
+              )}
+            </div>
+          ) : (
+            <Link to="/login" className="header__item">
+              <FaUser className="icon" />
+              Đăng nhập
+            </Link>
+          )}
+
           <a href="/cart" className="header__item">
             <FaShoppingCart className="icon" />
             Giỏ hàng
