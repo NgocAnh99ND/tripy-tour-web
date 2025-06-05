@@ -12,7 +12,7 @@ CREATE TABLE users (
 CREATE TABLE product (
     product_id INT PRIMARY KEY,
     product_name VARCHAR(255) NOT NULL,
-    image VARCHAR(255) NOT NULL,
+    image VARCHAR(255),
     price INT NOT NULL,
     old_price INT,
     color VARCHAR(50),

@@ -1,8 +1,10 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import "./AddProductForm.css";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import "./EditProduct.css";
 
-function AddProductForm() {
+function EditProduct() {
+    const { productId } = useParams();
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         productId: "",
         productName: "",
@@ -17,7 +19,18 @@ function AddProductForm() {
         rating: "",
     });
 
-    const navigate = useNavigate();
+    // Lấy thông tin sản phẩm cũ để fill vào form
+    useEffect(() => {
+        fetch(`http://localhost:8080/product?id=${productId}`)
+            .then((res) => res.json())
+            .then((data) => {
+                setFormData(data);
+            })
+            .catch((err) => {
+                console.error("Lỗi khi fetch sản phẩm:", err);
+                alert("Không lấy được thông tin sản phẩm.");
+            });
+    }, [productId]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -31,8 +44,8 @@ function AddProductForm() {
         e.preventDefault();
 
         try {
-            const response = await fetch("http://localhost:8080/add_product", {
-                method: "POST",
+            const response = await fetch("http://localhost:8080/update_product", {
+                method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
                 },
@@ -42,19 +55,19 @@ function AddProductForm() {
             if (response.ok) {
                 const result = await response.json();
                 alert(result);
-                navigate("/admin/products"); // 👉 chuyển sang trang danh sách sản phẩm
+                navigate("/admin/products");
             } else {
-                alert("Failed to add product. Server error.");
+                alert("Cập nhật thất bại.");
             }
         } catch (error) {
-            console.error("Lỗi khi gửi sản phẩm:", error);
+            console.error("Lỗi khi cập nhật:", error);
             alert("Lỗi kết nối tới server.");
         }
     };
 
     return (
-        <div className="add-product-form">
-            <h3>Add New Product</h3>
+        <div className="edit-product-form">
+            <h3>Edit Product</h3>
             <form onSubmit={handleSubmit}>
                 {Object.keys(formData).map((field) => (
                     <div className="form-group" key={field}>
@@ -69,8 +82,8 @@ function AddProductForm() {
                 ))}
 
                 <div className="form-actions">
-                    <button type="submit">Submit</button>
-                    <button type="button" onClick={() => navigate("/admin")}>
+                    <button type="submit">Save</button>
+                    <button type="button" onClick={() => navigate("/admin/products")}>
                         Cancel
                     </button>
                 </div>
@@ -79,4 +92,4 @@ function AddProductForm() {
     );
 }
 
-export default AddProductForm;
+export default EditProduct;

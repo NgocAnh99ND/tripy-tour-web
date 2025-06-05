@@ -9,6 +9,9 @@ import { UserProvider } from "./components/UserContext/UserContext";
 import AdminLogin from "./components/AdminLogin/AdminLogin";
 import AdminPage from "./components/AdminPage/AdminPage";
 import { AdminProvider } from "./components/AdminContext/AdminContext";
+import AdminProductList from "./components/AdminProductList/AdminProductList";
+import AddProductForm from "./components/AddProduct/AddProductForm"
+import EditProduct from "./components/EditProduct/EditProduct";
 
 function App() {
   const location = useLocation();
@@ -21,6 +24,9 @@ function App() {
           {/*Admin routes không có Header */}
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/admin" element={<AdminPage />} />
+          <Route path="/admin/products" element={<AdminProductList />} />
+          <Route path="/admin/add-product" element={<AddProductForm />} />
+          <Route path="/admin/edit/:productId" element={<EditProduct />} />
         </Routes>
       </AdminProvider>
 
