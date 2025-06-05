@@ -25,6 +25,27 @@ function Header() {
   const [scrolling, setScrolling] = useState(false);
   const { username, setUsername } = useContext(UserContext); // lấy username từ context
   const [dropdownVisible, setDropdownVisible] = useState(false);
+  const [searchText, setSearchText] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
+
+  //Suggest cho ô tìm kiếm
+  useEffect(() => {
+    if (searchText.trim() === "") {
+      setSuggestions([]);
+      return;
+    }
+
+    fetch("http://localhost:8080/all_products")
+      .then((res) => res.json())
+      .then((data) => {
+        const matched = data.filter((p) =>
+          p.productName.toLowerCase().includes(searchText.toLowerCase())
+        );
+        setSuggestions(matched);
+      })
+      .catch((err) => console.error("Lỗi tìm kiếm:", err));
+  }, [searchText]);
+
 
   useEffect(() => {
     // Sự kiện cuộn trang
@@ -60,8 +81,23 @@ function Header() {
         {/* Ô tìm kiếm */}
         <div className="header__search">
           <FaSearch className="search-icon" />
-          <input type="text" placeholder="Bạn tìm gì..." />
+          <input
+            type="text"
+            placeholder="Bạn tìm gì..."
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+          />
+          {suggestions.length > 0 && (
+            <ul className="search-suggestions">
+              {suggestions.map((item) => (
+                <li key={item.productId}>
+                  <Link to={`/product/${item.productId}`}>{item.productName}</Link>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
+
 
         {/* Các nút bên phải */}
         <div className="header__actions">
