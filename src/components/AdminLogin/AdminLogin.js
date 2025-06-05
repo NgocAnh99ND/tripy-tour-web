@@ -10,13 +10,27 @@ function AdminLogin() {
     const { setIsAdminLoggedIn } = useContext(AdminContext);
     const navigate = useNavigate();
 
-    const handleLogin = (e) => {
+    const handleLogin = async (e) => {
         e.preventDefault();
-        if (username === "admin" && password === "admin123") {
-            setIsAdminLoggedIn(true);
-            navigate("/admin");
-        } else {
-            alert("Sai tài khoản hoặc mật khẩu");
+
+        try {
+            const response = await fetch("http://localhost:8080/user");
+            const users = await response.json(); // Trả về danh sách user
+
+            const foundUser = users.find(
+                (user) =>
+                    user.userName === username && user.passWord === password
+            );
+
+            if (foundUser) {
+                setIsAdminLoggedIn(true);
+                navigate("/admin");
+            } else {
+                alert("Sai tài khoản hoặc mật khẩu");
+            }
+        } catch (error) {
+            console.error("Lỗi khi gọi API đăng nhập:", error);
+            alert("Không thể kết nối đến server!");
         }
     };
 
