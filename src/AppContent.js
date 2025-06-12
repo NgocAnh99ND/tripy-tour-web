@@ -13,6 +13,7 @@ import AdminProductList from "./components/AdminProductList/AdminProductList";
 import AddProductForm from "./components/AddProduct/AddProductForm";
 import EditProduct from "./components/EditProduct/EditProduct";
 import PrivateRoute from "./PrivateRoute";
+import RegisterPopup from "./components/RegisterPopup/RegisterPopup";
 
 
 function AppContent() {
@@ -42,6 +43,7 @@ function AppContent() {
 
                     <Routes>
                         <Route path="/login" element={<Login />} />
+                        <Route path="/register" element={<RegisterPopup />} />
                         <Route
                             path="/"
                             element={

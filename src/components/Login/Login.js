@@ -1,9 +1,9 @@
-// src/pages/Login.js
-import React, { useState, useContext } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../UserContext/UserContext";
 import "./Login.css";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Login() {
     const { setUsername } = useContext(UserContext);
@@ -14,7 +14,7 @@ function Login() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (inputUsername === "Ngoc Anh" && password) {
+        if (inputUsername === "Ngoc Anh" && password === "1234") {
             setUsername(inputUsername);
             navigate("/"); // chuyển về trang chính sau đăng nhập
         } else {
@@ -49,9 +49,15 @@ function Login() {
                     </span>
                 </div>
                 <button type="submit">Đăng nhập</button>
+                
+                {/* Nút tạo tài khoản dạng thẻ a */}
+                <div className="register-link">
+                    <Link to="/register">Tạo tài khoản</Link>
+                </div>
             </form>
         </div>
     );
 }
 
 export default Login;
+

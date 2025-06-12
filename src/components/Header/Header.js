@@ -124,7 +124,7 @@ function Header() {
             </Link>
           )}
 
-          <a href="/cart" className="header__item">
+          <a href="#" className="header__item">
             <FaShoppingCart className="icon" />
             Giỏ hàng
           </a>
