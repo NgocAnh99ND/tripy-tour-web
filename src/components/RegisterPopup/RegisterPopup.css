@@ -19,6 +19,10 @@
     width: 350px;
 }
 
+.register-popup h2 {
+    padding-bottom: 20px;
+}
+
 .register-popup input {
     width: 100%;
     padding: 10px 12px;
@@ -54,6 +58,25 @@
     transition: background-color 0.3s;
 }
 
-.register-popup button:hover {
+/* Disable hiệu ứng hover nếu button bị disabled */
+.register-popup button:hover:enabled {
     background-color: #059669;
+}
+
+.register-popup button:disabled {
+    background-color: #a7f3d0;
+    cursor: not-allowed;
+}
+
+/* Border đỏ cho ô xác nhận mật khẩu */
+.error-border {
+    border: 1px solid #ef4444 !important;
+}
+
+/* Thông báo lỗi dưới ô nhập */
+.error-text {
+    color: #ef4444;
+    font-size: 13px;
+    margin-top: -10px;
+    margin-bottom: 10px;
 }

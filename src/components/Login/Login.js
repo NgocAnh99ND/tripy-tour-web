@@ -1,9 +1,8 @@
 import { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { UserContext } from "../UserContext/UserContext";
 import "./Login.css";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
 
 function Login() {
     const { setUsername } = useContext(UserContext);
@@ -12,13 +11,28 @@ function Login() {
     const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        if (inputUsername === "Ngoc Anh" && password === "1234") {
-            setUsername(inputUsername);
-            navigate("/"); // chuyển về trang chính sau đăng nhập
-        } else {
-            alert("Sai thông tin đăng nhập");
+
+        try {
+            const response = await fetch("http://localhost:8080/new_user");
+            const newUsers = await response.json(); // Trả về danh sách user
+
+            const foundUser = newUsers.find(
+                (user) =>
+                    user.userName === inputUsername &&
+                    user.passWord === password
+            );
+
+            if (foundUser) {
+                setUsername(true);
+                navigate("/");
+            } else {
+                alert("Sai tài khoản hoặc mật khẩu");
+            }
+        } catch (error) {
+            console.error("Lỗi khi gọi API đăng nhập:", error);
+            alert("Không thể kết nối đến server!");
         }
     };
 
@@ -49,7 +63,7 @@ function Login() {
                     </span>
                 </div>
                 <button type="submit">Đăng nhập</button>
-                
+
                 {/* Nút tạo tài khoản dạng thẻ a */}
                 <div className="register-link">
                     <Link to="/register">Tạo tài khoản</Link>
@@ -60,4 +74,3 @@ function Login() {
 }
 
 export default Login;
-
