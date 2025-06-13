@@ -21,11 +21,16 @@ function EditProduct() {
 
     // Lấy thông tin sản phẩm cũ để fill vào form
     useEffect(() => {
-        fetch(`http://localhost:8080/product?id=${productId}`)
+        fetch(`http://localhost:8080/product_detail?id=${productId}`)
             .then((res) => res.json())
             .then((data) => {
-                setFormData(data);
+                if (Array.isArray(data) && data.length > 0) {
+                    setFormData(data[0]);
+                } else {
+                    alert("Không có dữ liệu sản phẩm.");
+                }
             })
+
             .catch((err) => {
                 console.error("Lỗi khi fetch sản phẩm:", err);
                 alert("Không lấy được thông tin sản phẩm.");
@@ -72,12 +77,25 @@ function EditProduct() {
                 {Object.keys(formData).map((field) => (
                     <div className="form-group" key={field}>
                         <label>{field.replaceAll("_", " ")}</label>
-                        <input
-                            type={field === "description" ? "textarea" : "text"}
-                            name={field}
-                            value={formData[field]}
-                            onChange={handleChange}
-                        />
+
+                        {field === "image" ? (
+                            <>
+                                {formData.image && (
+                                    <img
+                                        src={`http://localhost:3000${formData.image}`}
+                                        alt="Product"
+                                        className="image_detail"
+                                    />
+                                )}
+                            </>
+                        ) : (
+                            <input
+                                type={field === "description" ? "textarea" : "text"}
+                                name={field}
+                                value={formData[field] ?? ""}
+                                onChange={handleChange}
+                            />
+                        )}
                     </div>
                 ))}
 
@@ -89,6 +107,7 @@ function EditProduct() {
                 </div>
             </form>
         </div>
+
     );
 }
 

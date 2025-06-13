@@ -56,3 +56,10 @@
     background-color: #f3f4f6;
     color: #111;
 }
+
+.image_detail {
+    max-width: 200px;
+    margin-top: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
