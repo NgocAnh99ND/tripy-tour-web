@@ -11,17 +11,9 @@ function DeleteProduct({ productId, onDeleteSuccess }) {
 
         setIsDeleting(true);
 
-        // fetch(`http://localhost:8080/delete_product?id=${productId}`, {
-        //     method: "DELETE",
-        // })
-        fetch("http://localhost:8080/delete_product", {
+        fetch(`http://localhost:8080/delete_product?id=${productId}`, {
             method: "DELETE",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ id: productId }),
         })
-
             .then((response) => {
                 if (response.ok) {
                     alert("Đã xoá sản phẩm thành công!");
