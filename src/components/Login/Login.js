@@ -5,8 +5,8 @@ import "./Login.css";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 function Login() {
-    const { setUsername } = useContext(UserContext);
-    const [inputUsername, setInputUsername] = useState("");
+    const { setIsUserLoggedIn, setUsername } = useContext(UserContext);
+    const [newUsername, setNewUsername] = useState("");
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
@@ -20,12 +20,13 @@ function Login() {
 
             const foundUser = newUsers.find(
                 (user) =>
-                    user.userName === inputUsername &&
-                    user.passWord === password
+                    user.username === newUsername &&
+                    user.password === password
             );
 
             if (foundUser) {
-                setUsername(true);
+                setIsUserLoggedIn(true);
+                setUsername(foundUser.username); // <== Dòng này để cập nhật username
                 navigate("/");
             } else {
                 alert("Sai tài khoản hoặc mật khẩu");
@@ -41,10 +42,9 @@ function Login() {
             <form className="login-form" onSubmit={handleSubmit}>
                 <h2>Đăng nhập</h2>
                 <input
-                    type="text"
                     placeholder="Tên đăng nhập"
-                    value={inputUsername}
-                    onChange={(e) => setInputUsername(e.target.value)}
+                    value={newUsername}
+                    onChange={(e) => setNewUsername(e.target.value)}
                     required
                 />
                 <div className="password-wrapper">
