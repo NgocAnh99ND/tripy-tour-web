@@ -58,7 +58,7 @@ function EditProduct() {
             });
 
             if (response.ok) {
-                const result = await response.json();
+                const result = await response.text();
                 alert(result);
                 navigate("/admin/products");
             } else {
