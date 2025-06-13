@@ -123,11 +123,18 @@
     transition: top 0.3s ease-in-out;
 }
 
+.header__main > ul > li:first-child{
+  border-radius: 12px 0 0 0;
+}
+
+.header__main > ul > li:last-child {
+    border-radius: 0 12px 0 0;
+}
+
 .header__main li {
     display: flex;
     align-items: center;
     transition: background-color 0.3s ease, color 0.3s ease;
-    border-radius: 12px 12px 0 0;
 }
 
 /* Hiệu ứng hover */
@@ -177,6 +184,14 @@
     z-index: 100;
 }
 
+.dropdown-content > li:first-child{
+  border-radius: 8px 8px 0 0;
+}
+
+.dropdown-content > li:last-child {
+    border-radius: 0 0 8px 8px;
+}
+
 .header__main li.dropdown:hover .dropdown-content {
     display: block !important;
     visibility: visible;
@@ -212,7 +227,6 @@
 .dropdown-logout button:hover {
     background-color: #f3f4f6;
 }
-
 
 /* Danh sách gợi ý */
 
